@@ -1,0 +1,60 @@
+net 1
+net 2
+segment channel 2
+pin1 12  pin2 3 0 0
+net 3
+segment channel 2
+pin1 35  pin2 36 0 0
+net 4
+net 5
+net 7
+net 8
+net 9
+segment channel 2
+pin1 27  pin2 47 0 0
+net 10
+net 11
+net 12
+segment channel 3
+pin1 28  pin2 62 0 0
+net 13
+net 14
+segment channel 3
+pin1 119  pin2 113 0 0
+segment channel 3
+pin1 39  pin2 95 0 0
+segment channel 2
+pin1 51  pin2 45 0 0
+segment channel 3
+pin1 95  pin2 119 0 0
+net 15
+segment channel 2
+pin1 102  pin2 108 0 0
+segment channel 2
+pin1 34  pin2 102 0 0
+segment channel 3
+pin1 96  pin2 120 0 0
+segment channel 2
+pin1 52  pin2 46 0 0
+net 16
+net 17
+net 18
+segment channel 2
+ pin1 64  pin2 103 0 0
+net 19
+segment channel 2
+pin1 66  pin2 81 0 0
+net 20
+net 21
+net 22
+net 23
+net 24
+segment channel 2
+ pin1 109  pin2 88 0 0
+net 25
+net 26
+net 27
+segment channel 3
+pin1 124  pin2 115 0 0
+net 28
+net 29

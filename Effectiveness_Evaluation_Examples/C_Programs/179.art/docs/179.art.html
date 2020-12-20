@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>179.art: SPEC CPU2000 Benchmark Description</TITLE>
+<META GENERATOR="Cloyce+VIM 5.3">
+<META REVISION="$Id: 179.art.html 1393 2005-06-14 15:55:21Z cloyce $">
+</HEAD>
+
+<BODY>
+<CENTER><H1>179.art<BR>
+SPEC CPU2000 Benchmark Description File</H1></CENTER>
+
+<H2>Benchmark Name</H2>
+<P>179.art</P>
+<HR>
+
+<H2>Benchmark Author</H2>
+<P>Charles Roberson &amp; Max Domeika</P>
+<HR>
+
+<H2>Benchmark Program General Category</H2>
+<P>Image Recognition/Neural networks</P>
+<HR>
+
+<H2>Benchmark Description</H2>
+
+<P>The Adaptive Resonance Theory 2 (ART 2) neural network is used to recognize
+objects in a thermal image.  The objects are a helicopter and an airplane.
+The neural network is first trained on the objects.  After training is
+complete, the learned images are found in the scanfield image.  A window
+corresponding to the size of the learned objects is scanned across the
+scanfield image and serves as input for the neural network.  The neural
+network attempts to match the windowed image with one of the images it has
+learned.</P>
+
+<H3>Description of ART 2</H3>
+<P>The ART 2 neural network models several characteristics
+of organic neural processing that is not modelled in more traditional Feed
+Forward Neural Networks(FFNN).  In brief, ART 2 neural networks offer the
+following advantages over traditional FFNN:</P>
+<UL>
+<LI>Expectation influences inputs - The past learnings of an ART 2 neural
+network influence the matching process.
+
+<LI>Creates own classifications - During training, the ART 2 neural network does
+not need explicit output information; it creates its own classification
+groups.
+
+<LI>Learns on-the-fly - ART 2 neural networks are capable of learning and
+classifying at the same time.  The benchmark does not use this feature of
+ART 2 neural networks.
+
+<LI>Contrast enhancement - ART 2 neural networks perform constrast enhancement
+through a series of normalizations in the dynamical system.
+</UL>
+<HR>
+
+<H2>Input Description</H2>
+
+<P>The training files consist of a thermal image of a
+helicopter and an airplane.  The scanfile is a field of view containing other
+thermal views of the helicopter and airplane.</P>
+<HR>
+
+<H2>Output Description</H2>
+
+<P>The output data consists of the confidence of a match
+between the learned image and the windowed field of view.  In addition, each
+F2 neuron's output is printed.  After the entire field of view is scanned
+the field of view with the highest confidence of being a match is output.</P>
+<HR>
+
+<H2>Programming Language</H2>
+<P>ANSI C</P>
+<HR>
+
+<H2>Known portability issues</H2>
+<P>None</P>
+<HR>
+
+<H2>Reference</H2>
+
+<P>C. W. Roberson, "Design Extensions To Adaptive Resonance Theory Neural
+Networks," Master's Project, Clemson University(1994).</P>
+
+<P>M.J. Domeika, C.W. Roberson, E.W. Page, and G.A. Tagliarini, "Adaptive
+Resonance Theory 2 Neural Network Approach To Star Field Recognition," in
+Applications and Science of Artificial Neural Networks II, Steven K. Rogers,
+Dennis W. Ruck, Editors, Proc. SPIE 2760, pp. 589-596(1996).</P>
+
+<P>G.A. Carpenter and S. Grossberg, "ART 2: Stable self-organization of pattern
+recognition codes for analog input patterns," Applied Optics, 26,
+pp. 4919-4930(1987).</P>
+<HR>
+Last Updated: 12 October 1999
+</BODY>
+</HTML>

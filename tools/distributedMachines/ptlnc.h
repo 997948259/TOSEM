@@ -1,0 +1,1 @@
+int ptlnc(int argc, char *argv[]);

@@ -1,0 +1,27 @@
+VERSION file
+
+300.twolf
+	September 1999	84	Bodo Parady
+		Changed type to L for random constants
+	March 1999	64	Bodo Parady
+		Increased runtime by 2x
+
+	February 1999 Bodo Parady
+		Added unlink to savewolf to make rename work
+		Removed signals and other gadgets to clean up main.c,
+			savewolf.c, okmalloc.c, and stats.c
+		Changed SPEC_CPU98 to CPU99
+
+	December 1998 Bodo Parady
+		Changed SPEC_CPU98 to CPU99
+
+	6 August 1998 Bodo Parady
+		Reduced run time to 1/5 of former time
+
+	23 July 1998 Bodo Parady
+		Change INT_MAX/MIN to have ifndef around it
+
+	16 April 1998 Bodo Parady
+		Initial version.  Fixes the random number generator
+		creating compare errors.
+

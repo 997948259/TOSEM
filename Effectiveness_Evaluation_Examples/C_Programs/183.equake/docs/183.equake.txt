@@ -1,0 +1,48 @@
+SPEC CPU2000 Benchmark Description File
+
+Benchmark Description:
+183.equake
+ 
+Benchmark Authors:
+David R. O'Hallaron and Loukas F. Kallivokas
+ 
+Benchmark Program General Category: 
+Simulation of seismic wave propagation in large basins
+ 
+Benchmark Description: 
+The program simulates the propagation of elastic waves in large,
+highly heterogeneous valleys, such as California's San Fernando
+Valley, or the Greater Los Angeles Basin. The goal is to recover the
+time history of the ground motion everywhere within the valley due to
+a specific seismic event. Computations are performed on an
+unstructured mesh that locally resolves wavelengths, using a finite
+element method.
+
+Input Description: 
+The input data comprises the unstructured grid topology, i.e., number
+of nodes, number of tetrahedral elements, node coordinates, and
+element connectivity, the seismic event characteristics, i.e. duration
+and seismic source specifics, material properties, and the structure
+of the sparse system matrix. The underlying reference problem is the
+simulation of 1994 Northridge Earthquake aftershock in the San
+Fernando Valley of Southern California.
+
+Output Description: 
+The output file contains a case summary with seismic source data and
+reports the motion (displacements) at both the hypocenter and
+epicenter of the earthquake for a predetermined number of simulation
+timesteps. The output file format is ASCII.
+           
+Programming Language: ANSI C
+ 
+Known portability issues: None
+ 
+Reference: 
+
+http://www.cs.cmu.edu/~quake
+
+H. Bao, J. Bielak, O. Ghattas, L. F. Kallivokas, D. R. O'Hallaron,
+J. R. Shewchuk, J. Xu, "Large-scale simulation of elastic wave
+propagation in heterogeneous media on parallel computers," Computer
+Methods in Applied Mechanics and Engineering, 152(1-2), 85-102, 1998
+

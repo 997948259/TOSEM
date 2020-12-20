@@ -1,0 +1,136 @@
+﻿生成启动时间为 2017/1/10 15:30:35。
+     1>项目“D:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\set-up\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc120.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(304): warning C4805: “==”: 在操作中将类型“int”与类型“bool”混合不安全
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(624): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(632): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(649): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(652): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(728): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(733): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(737): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(753): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(758): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(764): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(772): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(776): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(860): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(864): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(867): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(870): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(876): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(880): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(885): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(889): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(894): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(899): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(918): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(921): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(924): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(931): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(942): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(948): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(958): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1066): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1071): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1075): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1091): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1096): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1102): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1113): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1120): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1205): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1209): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1212): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1215): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1221): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1225): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1230): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1234): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1239): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1244): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(204) : 参见“strtok”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1263): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1266): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1269): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1276): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1287): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1293): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 f:\set-up\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(1303): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 f:\set-up\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(672): warning C4101: “ClientAddr”: 未引用的局部变量
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(994): warning C4101: “ClientAddr”: 未引用的局部变量
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(220): warning C4715: “__Sat”: 不是所有的控件路径都返回值
+     1>d:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\main.cpp(470): warning C4715: “EachSeg”: 不是所有的控件路径都返回值
+       Link:
+         F:\set-up\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\test.exe" /INCREMENTAL /NOLOGO odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\test.lib" /MACHINE:X86 /SAFESEH .\Debug\ConsLNFG.obj
+         .\Debug\function.obj
+         .\Debug\lex.obj
+         .\Debug\Machine.obj
+         .\Debug\main.obj
+         .\Debug\parse.obj
+         .\Debug\tpool.obj
+         .\Debug\TreeNode.obj
+     1>ConsLNFG.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+         test.vcxproj -> D:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\.\Debug\test.exe
+       BscMake:
+         F:\set-up\VC\bin\bscmake.exe /nologo /o".\Debug\test.bsc" .\Debug\ConsLNFG.sbr .\Debug\function.sbr .\Debug\lex.sbr .\Debug\Machine.sbr .\Debug\main.sbr .\Debug\parse.sbr .\Debug\tpool.sbr .\Debug\TreeNode.sbr
+     1>已完成生成项目“D:\编译器项目\最新验证版本\多机多核服务器版本（多用户使用）\server4.0整合版添加多用户并行\test.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.82

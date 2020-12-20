@@ -1,0 +1,63 @@
+SPEC CPU2000 Benchmark Description File
+
+Benchmark Name: 179.art
+
+Benchmark Author: Charles Roberson & Max Domeika
+
+Benchmark Program General Category: Image Recognition/Neural networks
+
+Benchmark Description:
+The Adaptive Resonance Theory 2 (ART 2) neural network is used to recognize
+objects in a thermal image.  The objects are a helicopter and an airplane.
+The neural network is first trained on the objects.  After training is
+complete, the learned images are found in the scanfield image.  A window
+corresponding to the size of the learned objects is scanned across the
+scanfield image and serves as input for the neural network.  The neural
+network attempts to match the windowed image with one of the images it has
+learned.
+
+Description of ART 2: The ART 2 neural network models several characteristics
+of organic neural processing that is not modelled in more traditional Feed
+Forward Neural Networks(FFNN).  In brief, ART 2 neural networks offer the
+following advantages over traditional FFNN:
+
+Expectation influences inputs - The past learnings of an ART 2 neural
+network influence the matching process.
+
+Creates own classifications - During training, the ART 2 neural network does
+not need explicit output information; it creates its own classification
+groups.
+
+Learns on-the-fly - ART 2 neural networks are capable of learning and
+classifying at the same time.  The benchmark does not use this feature of
+ART 2 neural networks.
+
+Contrast enhancement - ART 2 neural networks perform constrast enhancement
+through a series of normalizations in the dynamical system.
+
+Input Description: The training files consist of a thermal image of a
+helicopter and an airplane.  The scanfile is a field of view containing other
+thermal views of the helicopter and airplane.
+
+Output Description: The output data consists of the confidence of a match
+between the learned image and the windowed field of view.  In addition, each
+F2 neuron's output is printed.  After the entire field of view is scanned
+the field of view with the highest confidence of being a match is output.
+
+Programming Language: ANSI C
+
+Known portability issues: None
+
+Reference:
+
+C. W. Roberson, "Design Extensions To Adaptive Resonance Theory Neural
+Networks," Master's Project, Clemson University(1994).
+
+M.J. Domeika, C.W. Roberson, E.W. Page, and G.A. Tagliarini, "Adaptive
+Resonance Theory 2 Neural Network Approach To Star Field Recognition," in
+Applications and Science of Artificial Neural Networks II, Steven K. Rogers,
+Dennis W. Ruck, Editors, Proc. SPIE 2760, pp. 589-596(1996).
+
+G.A. Carpenter and S. Grossberg, "ART 2: Stable self-organization of pattern
+recognition codes for analog input patterns," Applied Optics, 26,
+pp. 4919-4930(1987).

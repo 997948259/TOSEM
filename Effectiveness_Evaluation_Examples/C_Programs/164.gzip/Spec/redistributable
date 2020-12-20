@@ -1,0 +1,4 @@
+src
+!Makefile
+data/ref/input/input.source
+data/train/input/input.combined

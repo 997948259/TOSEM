@@ -1,0 +1,197 @@
+SPEC CPU2000 Benchmark Description File
+
+Benchmark Name: TimberWolfSC placement and global routing package.
+
+Benchmark Author: Bill Swartz <Bill_Swartz@internetcad.com>
+
+Benchmark Program General Category: Computer Aided Design
+
+Benchmark Description:
+The TimberWolfSC placement and global routing package is used in the process
+of creating the lithography artwork needed for the production of microchips.
+Specifically, it determines the placement and global connections for groups
+of transistors (known as standard cells) which constitute the microchip.
+The placement problem is a permutation. Therefore, a simple or brute force
+exploration of the state space would take an execution time proportional to
+the factorial of the input size.  For problems as small as 70 cells, a brute
+force algorithm would take longer than the age of the universe on the world's
+fastest computer.   Instead, the TimberWolfSC program uses simulated annealing
+as a heuristic to find very good solutions for the row-based standard cell
+design style.  In this design style, transistors are grouped together to form
+standard cells.  These standard cells are placed in rows so that all cells of
+a row may share power and ground connections by abutment.  The simulated
+annealing algorithm has found the best known solutions to a large group of
+placement problems.  The global router which follows the placement step
+interconnects the microchip design.  It utilizes a constructive algorithm
+followed by iterative improvement.
+
+The basic simulated annealing algorithm has not changed since its
+inception in 1983.  The version in the SPEC suite is the most numerically
+intensive version.  Recent versions have reduced runtimes by clever reductions
+in the search space.  However, the move strategy and cost functions are
+identical to later versions.
+
+The version of TimberWolfSC that has been submitted to SPEC has been customized
+for SPEC.  It has been modified specifically for the benchmark suite so that
+it would have a behavior that captures the flavor of many implementations of
+simulated annealing.  The submitted program spends most of its time in the
+inner loop calculations.  By doing this, this version traverses memory often
+creating cache misses.  In fact, this version running small jobs looks like
+later simulated annealing versions running on large jobs.  This was to insure
+that the benchmark would be applicable to future versions of the program
+running large instances.  The submitted version should be a computers worst
+nightmare, yet realistic for future problems.
+
+
+Input Description:
+Three test problems are provided for SPEC benchmark.  The first
+problem is a small synchronous circuit which is being placed and routed
+as a subchip.  The second test circuit is the MCNC primary 1 benchmark
+circuit, one of the most frequently executed benchmark circuits.  The
+third test case is a structured circuit found in the MCNC benchmark
+suite.  In all cases, the TimberWolf program is required to determine
+the position of the standard cells and determine the interconnection
+of the netlist.  In addition, the global router must add extra cells
+known as feedthrus to complete the route if not enough space is present
+between two adjacent standard cells.  The input files consist of the
+block description file or <designName>.blk file, the netlist file or
+<designName>.cel file, the net weighting file or <designName>.net file
+and the parameter file or <designName>.par file.  The block file describes
+the number and position of the rows where standard cells are to be placed.
+A valid placement is one in which all of the cells are placed within the
+specified rows without any overlap between cells.  The netlist file
+contains a description of the standard cells as well as the connection
+network between cells.  At this time the physical location of these connections
+has not been determined.
+
+Output Description:
+For each test circuit, two output files of significance are created : the
+placement file or the <designName>.pl1, and the global routing file or the
+<designName>.pin file.  The placement file consists of ascii data arranged
+in seven fields.  The meaning of the seven fields are as follows:
+
+<Standard cell instance> <llx> <lly> <urx> <ury> <orientation> <row>
+
+where llx, lly, urx, ury are the four corners of a bounding box which
+contain the standard cell instance.   The orientation has eight possible
+values:
+(0) Orientation 0 is the cell geometry as described as in the input.
+(1) Orientation 1 is the cell geometry after mirroring the y coordinates with
+    respect to orientation 0.
+(2) Orientation 2 is the cell geometry after mirroring the x coordinates with
+    respect to orientation 0.
+(3) Orientation 3 is the cell geometry after a rotation of 180 degrees with
+    respect to orientation 0 (which is the same as a mirror of the y coordinates
+    with respect to orientation 0 followed by a mirror of the x coordinates).
+(4) Orientation 4 is the cell geometry after a combination of a mirror of the
+    cell's x coordinates followed by a 90 degree rotation of the cell with
+    respect to orientation 0.
+(5) Orientation 5 is the cell geometry after a combination of a mirror of the
+    cell's x coordinates followed by a -90 degree rotation of the cell with
+    respect to orientation 0.
+(6) Orientation 6 is the cell geometry after a 90 degree rotation of the cell
+    with respect to orientation 0.
+(7) Orientation 7 is the cell geometry after a -90 degree rotation of the cell
+    with respect to orientation 0.
+The row is the row number in which the standard cell resides.
+
+Each line of the global routing or <designName>.pin file consists of 9 fields
+of information concerning an active pin. An active pin is a pin which will
+participate in the minimum area global route of the circuit in the following
+format:
+
+NETNAME GROUPNO INSTANCE PORT X Y CHANNEL LOC LAYER
+
+where the fields are defined as
+
+string integer string string number number integer integer integer
+
+Pins which are inactive, that is, pins which are not used in the minimum area
+global route, are not included in this file.
+
+The fields for each active pin are now presented. The first field represents the
+name of the net attached to the pin. The second field is an integer which
+represents the group number for the pin. The group numbers are globally unique.
+That is, each net has its constituent pins broken down into groups such that the
+pins with a common group number are to be interconnected. Two pins belonging to
+the same net but with different group numbers are not to be interconnected.
+Hence, a channel or detailed router is not to be given the net name for a pin,
+but rather the group number in order to achieve the minimum area layout. For
+clarity, the user may wish to give both the net name and the group number
+(in the fashion: netName_groupNumber) so that the label for a pin produced on
+a plot contains the net name. In any event, the group number must be given to
+the channel or detailed router in order to achieve the routing density reported
+by TimberWolfSC.
+
+The third field is a string representing the name of the instance to which the
+pins belongs. All instance names are unique within a design. All pseudo cell pins will be suffixed with a number to insure uniqueness. All explicit feed through
+instances will begin with the prefix twfeed.
+
+The fourth field is a string which represents the port name. (Remember, port
+names are unique with respect to the cell model). The fifth and sixth fields
+are a pair of numbers representing the x and y coordinates of the location of
+the pin. These numbers are expressed as integers.
+
+The seventh field represents the channel number to which the pin belongs.
+Horizontal core region channels are numbered (starting at 1) from the channel
+below the first row. The last channel is numbered (numRows + 1). All I/O channels
+have zero assigned to their channel field.
+
+The eighth field is a location field. It is an integer which takes on one of
+four possible values (- 2, - 1, 1, 2). A net, which must leave a horizontal
+channel and enter a vertical channel does so by means of a pseudo pin at either
+the left end or right end of a horizontal channel. A pseudo pin at the left end
+of a horizontal channel has this location field set to - 2 and a pseudo pin at
+the right end of a horizontal channel has this location field set to 2. The
+name of a pseudo pin is: PSEUDO_PIN and it is said to lie on a cell named:
+PSEUDO_CELL. A pseudo pin will be included in two different group sequences -
+a core subnet and a I/O subnet. The unique pseudo instance name allows for
+matching between these two sequences. This simplifies connectivity checking
+on nets, which contain many pseudo pins. This is furnished as an aid for
+detailed routers.
+
+If a pin is located at the top of a channel the field is set to 1. If a pin
+is located at the bottom of a channel the field is set to -1.
+
+The ninth and final field is an integer indicating the layer assigned to this
+pin.  If no layer is assigned, this field will be set to zero.
+
+In summary, the nine fields for an active pin port are:
+1       Name of net to which the port belongs.
+2       Group number of the port.
+3       Cell name to which the port belongs.
+4       The name of the port.
+5       The x-coordinate of the port location.
+6       The y-coordinate of the port location.
+7       The channel to which the port belongs.
+8       Whether the port is at the top (1), bottom (-1), left end (-2),
+        or right end (2) of the channel.
+9       Layer.
+
+
+Programming Language: C
+
+Known portability issues:
+
+  Systems whose compilation systems default to unsigned characters need to
+use -DHAVE_SIGNED_CHAR as a portability flag.
+ 
+Reference:
+
+W. Swartz and C. Sechen, "A New Generalized Row-Based Global Router,"
+Proc. of ICCAD, 1993, pp. 491-498.
+
+W. Swartz, "Automatic Layout of Analog and Digital Mixed Macro/Standard
+Cell Integrated Circuits," Yale Thesis available
+http://www.internetcad.com/thesis.htm
+
+C. Sechen and K.W. Lee, "An Improved Simulated Annealing Algorithm for
+Row-Based Placement," Proc. of ICCAD, 1987, pp. 478-481.
+
+C. Sechen and A. Sangiovanni-Vincentelli, "The TimberWolf Placement and
+Routing Package," IEEE J of Solid-State Circuits, Vol. 20 No. 2, 1985,
+pp. 432-439.
+
+C. Sechen and A. Sangiovanni-Vincentelli, "The TimberWolf Placement and
+Routing Package," Proc. 1984 Custom Integrated Circuits Conference, Rochester,
+New York, May 1984.

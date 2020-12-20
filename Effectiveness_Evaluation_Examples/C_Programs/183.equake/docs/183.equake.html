@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>183.equake: SPEC CPU2000 Benchmark Description</TITLE>
+<META GENERATOR="Cloyce+VIM 5.3">
+<META REVISION="$Id: 183.equake.html 1393 2005-06-14 15:55:21Z cloyce $">
+</HEAD>
+
+<BODY>
+<CENTER><H1>183.equake<BR>
+SPEC CPU2000 Benchmark Description File</H1></CENTER>
+
+<H2>Benchmark Name</H2>
+<P>183.equake</P>
+<HR>
+
+<H2>Benchmark Authors</H2>
+<P>David R. O'Hallaron and Loukas F. Kallivokas</P>
+<HR>
+
+<H2>Benchmark Program General Category</H2>
+<P>Simulation of seismic wave propagation in large basins</P>
+<HR>
+
+<H2>Benchmark Description</H2>
+<P>The program simulates the propagation of elastic waves in large,
+highly heterogeneous valleys, such as California's San Fernando
+Valley, or the Greater Los Angeles Basin. The goal is to recover the
+time history of the ground motion everywhere within the valley due to
+a specific seismic event. Computations are performed on an
+unstructured mesh that locally resolves wavelengths, using a finite
+element method.</P>
+<HR>
+
+<H2>Input Description</H2>
+<P>The input data comprises the unstructured grid topology, i.e., number
+of nodes, number of tetrahedral elements, node coordinates, and
+element connectivity, the seismic event characteristics, i.e. duration
+and seismic source specifics, material properties, and the structure
+of the sparse system matrix. The underlying reference problem is the
+simulation of 1994 Northridge Earthquake aftershock in the San
+Fernando Valley of Southern California.</P>
+<HR>
+
+<H2>Output Description</H2>
+<P>The output file contains a case summary with seismic source data and
+reports the motion (displacements) at both the hypocenter and
+epicenter of the earthquake for a predetermined number of simulation
+timesteps. The output file format is ASCII.</P>
+<HR>
+
+<H2>Programming Language</H2>
+<P>ANSI C</P>
+<HR>
+
+<H2>Known portability issues</H2>
+<P>None</P>
+<HR>
+
+<H2>Reference</H2>
+
+<P><A HREF="http://www.cs.cmu.edu/~quake">http://www.cs.cmu.edu/~quake</A></P>
+
+<P>H. Bao, J. Bielak, O. Ghattas, L. F. Kallivokas, D. R. O'Hallaron,
+J. R. Shewchuk, J. Xu, "Large-scale simulation of elastic wave
+propagation in heterogeneous media on parallel computers," Computer
+Methods in Applied Mechanics and Engineering, 152(1-2), 85-102, 1998</P>
+<HR>
+Last Updated: 13 October 1999
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>197.parser: SPEC CPU2000 Benchmark Description</TITLE>
+<META GENERATOR="Cloyce+VIM 5.3">
+<META REVISION="$Id: 197.parser.html 1393 2005-06-14 15:55:21Z cloyce $">
+</HEAD>
+
+<BODY>
+<CENTER><H1>197.parser<BR>
+SPEC CPU2000 Benchmark Description File</H1></CENTER>
+
+<H2>Benchmark Name</H2>
+<P>197.parser</P>
+<HR>
+
+<H2>Benchmark Author</H2>
+<P>
+Danny Sleator
+     (<A HREF="mailto:sleator@cs.cmu.edu">sleator@cs.cmu.edu</A>)
+and Davy Temperley
+     (<A HREF="mailto:dt3@columbia.edu">dt3@columbia.edu</A>)
+</P>
+
+<HR>
+
+<H2>Benchmark Program General Category</H2>
+<P>Word processing</P>
+<HR>
+
+<H2>Benchmark Description</H2>
+<P>The Link Grammar Parser is a syntactic parser of English, based on link
+grammar, an original theory of English syntax. Given a sentence, the
+system assigns to it a syntactic structure, which consists of set of
+labeled links connecting pairs of words. </P>
+
+<P>The parser has a dictionary of about 60000 word forms. It has coverage
+of a wide variety of syntactic constructions, including many rare and
+idiomatic ones. The parser is robust; it is able to skip over portions
+of the sentence that it cannot understand, and assign some structure to
+the rest of the sentence. It is able to handle unknown vocabulary, and
+make intelligent guesses from context about the syntactic categories of
+unknown words.</P>
+
+<HR>
+
+<H2>Input Description</H2>
+
+<P>The input is a sequence of proposed sentences, one per line.
+Punctuation and case matter.</P>
+<HR>
+
+<H2>Output Description</H2>
+<P>The output is an analysis of the proposed input sentence.  The
+analysis includes a set of links which capture the grammatical structure
+of the sentence, a labelling of each word with an appropriate part of
+speech tag, along with a judgement of the grammaticality of the input
+sentence.  Words in square brackets are ones that the parser deems
+superfluous. </P>
+<HR>
+
+<H2>Programming Language</H2>
+<P>The parser is written in ANSI C.</P>
+<HR>
+
+<H2>Known portability issues</H2>
+<P>None</P>
+<H2>Reference</H2>
+<P>See <A
+HREF="http://www.link.cs.cmu.edu/link">http://www.link.cs.cmu.edu/link</A>
+for announcements of the latest version, detailed documentation, papers,
+source code, and rules for commercial use.</P>
+<HR>
+Last updated: 26 Januarry 2000
+</BODY>
+</HTML>

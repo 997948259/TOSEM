@@ -1,0 +1,96 @@
+Log file of evolution of SPEC CPU2000 benchmark 181.mcf
+=======================================================
+
+Project leader:
+        Reinhold Weicker, Fujitsu Siemens Computers, Paderborn / Germany
+        reinhold.weicker@fujitsu-simens.com
+
+
+Last change: August 2, 2000
+
+
+-- First entries got lost over time, need to be reconstructed.
+
+
+February 25, 1999, Reinhold Weicker (Siemens)
+-----------------
+
+Based on discussions with the author, he provided a new version of
+mcf, in an effort to decrease the code locality somewhat
+(to distribute "hot spots" somewhat more in the code).
+The way he did it was to make some other parts of the program
+"weight more", relative to the two most frequently executed lines.
+I name this new version 303.mcf2, as a temporary alternative to 181.mcf.
+
+It is intended that the CPU subcommittee members evaluate both
+alternative and vote for one as the final candidate.
+this final candidate will then be (re)named 181.mcf.
+
+
+March 22, 1999, Reinhold Weicker (Siemens)
+--------------
+
+New version received from the author (his numbering: mcf-1.6), tested 
+successfully and transmitted to SPEC.
+
+New features: 
+(1) Compared with the February version, it uses less memory:
+Memory is allocated once at the beginning of the main run, enough
+for the duration of the run.
+
+(2) Through a new input set, ("ref") runtime has been made longer,
+to satisfy the new minimum runtimes (>= 1200 sec on the SPEC reference
+machine, assuming high optimization).
+
+
+April 8, 1999, Reinhold Weicker (Siemens)
+-------------
+
+Following the discussions and decisions at the SPEC OSG meeting last week,
+I make the new version of mcf (303.mcf2) the only version and change
+its name (back) to 181.mcf.
+In this process, I also reintroduce the modifications that were necessary for
+NT (file defines.h), and clean up source file mcf.c and the output files
+...../181.mcf/data/*/output/inp.out such that they do not contain "Umlaute" 
+(in the name Loebel).
+
+
+September 29, 1999, Reinhold Weicker (Siemens)
+------------------
+
+Following the discussion at the September SPEC meeting,
+I added the following line to the master Makefile in 181.mcf/src:
+	BENCHFLAGS = -DWANT_STDC_PROTO
+The effect is that the following #define 
+  #ifndef _PROTO_
+  #if defined(__STDC__) || defined(__cplusplus) || defined(WANT_STDC_PROTO)
+  #define _PROTO_( args ) args
+is now active for all compilations, i.e. function prototypes are used
+for all compilations.
+Before this change, many compilers had it defined anyway (because
+__STDC__ is predefined for them); several NT-based compilers explicitly needed
+a portability flag -DWANT_STDC_PROTO; some may not have used
+function prototypes.
+After this change, no compiler should need an extra portability flag, and
+all should now use function prototypes.
+
+
+April 12, 2000, Reinhold Weicker (Fujitsu Siemens)
+--------------
+
+(Change to be integrated in version 1.01 of the suite)
+
+In file $SPEC/benchspec/CINT2000/181.mcf/src/output.c, replaced line 40
+  if(( out = fopen( outfile, "wt" )) == NULL )
+by
+  if(( out = fopen( outfile, "w" )) == NULL )
+In file $SPEC/benchspec/CINT2000/181.mcf/src/readmin.c, replaced line 38
+  if(( in = fopen( net->inputfile, "rt")) == NULL )
+by
+  if(( in = fopen( net->inputfile, "r")) == NULL )
+
+Reason: One particular system could not compile in the original form;
+all systems tested by SPEC could compile in the new form; no performance
+difference.
+
+

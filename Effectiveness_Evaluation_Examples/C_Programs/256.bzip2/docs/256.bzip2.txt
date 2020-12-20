@@ -1,0 +1,60 @@
+SPEC CPU2000 Benchmark Description File
+ 
+Benchmark Name: 256.bzip2
+ 
+Benchmark Author: Julian Seward <jseward@acm.org>
+ 
+Benchmark Program General Category: compression
+ 
+Benchmark Description:
+
+  256.bzip2 is based on Julian Seward's bzip2 version 0.1.  The only
+  difference between bzip2 0.1 and 256.bzip2 is that SPEC's version of bzip2
+  performs no file I/O other than reading the input.  All compression and
+  decompression happens entirely in memory.  This is to help isolate the work
+  done to only the CPU and memory subsystem.
+
+Input Description:
+
+  256.bzip2's reference workload has three components: a large TIFF image, a
+  program binary, and a source tar file.  These components were selected as
+  a reasonably representative set of things that bzip2 might most often be
+  used on.
+ 
+  Each input set is compressed and decompressed at two different blocking
+  factors ("compression levels"), with the end result of the process being
+  compared to the original data after each decompression step.
+
+Output Description:
+
+  The output files provide a brief outline of what the benchmark is doing as
+  it runs.  Output sizes for each compression and decompression are printed
+  to facilitate validation, and the results of decompression are compared
+  with the input data to ensure that they match.
+ 
+Programming Language: ANSI C
+ 
+Known portability issues: None
+ 
+References:
+
+  $SPEC/benchspec/CINT2000/256.bzip2/src/ALGORITHMS
+
+  Michael Burrows and D. J. Wheeler: "A block-sorting lossless data
+    compression algorithm" 10th May 1994. Digital SRC Research Report 124.
+    ftp://ftp.digital.com/pub/DEC/SRC/research-reports/SRC-124.ps.gz ;
+
+  Daniel S. Hirschberg and Debra A. LeLewer, "Efficient Decoding of Prefix
+    Codes", Communications of the ACM, April 1990, Vol 33, # 4.
+
+  David J. Wheeler, Program bred3.c and accompanying document bred3.ps.
+    ftp://ftp.cl.cam.ac.uk/pub/user/djw3/ 
+
+  Jon L. Bentley and Robert Sedgewick, "Fast Algorithms for Sorting and
+    Searching Strings", Available from Sedgewick's web page, 
+    http://www.cs.princeton.edu/~rs
+
+  Peter Fenwick, Block Sorting Text Compression, Proceedings of the 19th
+    Australasian Computer Science Conference, Melbourne, Australia. Jan 31 -
+    Feb 2, 1996.
+    ftp://ftp.cs.auckland.ac.nz/pub/peter-f/ACSC96paper.ps

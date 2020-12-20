@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>256.bzip2: SPEC CPU2000 Benchmark Description</TITLE>
+<META GENERATOR="Cloyce+Emacs 20.3">
+<META REVISION="$Id: 256.bzip2.html 1393 2005-06-14 15:55:21Z cloyce $">
+</HEAD>
+
+<BODY>
+<CENTER><H1>256.bzip2<BR>
+SPEC CPU2000 Benchmark Description</H1></CENTER>
+ 
+<H2>Benchmark Name</H2>
+<P>256.bzip2</P>
+<HR>
+ 
+<H2>Benchmark Author</H2>
+<P>Julian Seward &lt;<A HREF="mailto:jseward@acm.org">jseward@acm.org</A>&gt;</P>
+<HR>
+ 
+<H2>Benchmark Program General Category</H2>
+<P>compression</P>
+<HR>
+ 
+<H2>Benchmark Description</H2>
+<P>256.bzip2 is based on Julian Seward's bzip2 version 0.1.  The only
+difference between bzip2 0.1 and 256.bzip2 is that SPEC's version of bzip2
+performs no file I/O other than reading the input.  All compression and
+decompression happens entirely in memory.  This is to help isolate the work
+done to only the CPU and memory subsystem.</P>
+<HR>
+
+<H2>Input Description</H2>
+<P>256.bzip2's reference workload has three components: a large TIFF image, a
+program binary, and a source tar file.  These components were selected as
+a reasonably representative set of things that bzip2 might most often be
+used on.</P>
+ 
+<P>Each input set is compressed and decompressed at two different blocking
+factors ("compression levels"), with the end result of the process being
+compared to the original data after each decompression step.</P>
+<HR>
+
+<H2>Output Description</H2>
+<P>The output files provide a brief outline of what the benchmark is doing as
+it runs.  Output sizes for each compression and decompression are printed
+to facilitate validation, and the results of decompression are compared
+with the input data to ensure that they match.</P>
+<HR>
+
+<H2>Programming Language</H2>
+<P>ANSI C</P>
+<HR>
+
+<H2>Known portability issues</H2>
+<P>None</P>
+<HR>
+
+<H2>References</H2>
+<UL>
+<LI>$SPEC/benchspec/CINT2000/256.bzip2/src/ALGORITHMS
+
+<LI>Michael Burrows and D. J. Wheeler: "A block-sorting lossless data
+compression algorithm" 10th May 1994. Digital SRC Research Report 124.
+<A HREF="ftp://ftp.digital.com/pub/DEC/SRC/research-reports/SRC-124.ps.gz">ftp://ftp.digital.com/pub/DEC/SRC/research-reports/SRC-124.ps.gz</A>
+
+<LI>Daniel S. Hirschberg and Debra A. LeLewer, "Efficient Decoding of Prefix
+Codes", Communications of the ACM, April 1990, Vol 33, # 4.
+
+<LI>David J. Wheeler, Program bred3.c and accompanying document bred3.ps.
+<A HREF="ftp://ftp.cl.cam.ac.uk/pub/user/djw3/">ftp://ftp.cl.cam.ac.uk/pub/user/djw3/</A>
+
+<LI>Jon L. Bentley and Robert Sedgewick, "Fast Algorithms for Sorting and
+Searching Strings", Available from Sedgewick's web page, 
+<A HREF="http://www.cs.princeton.edu/~rs">http://www.cs.princeton.edu/~rs</A>
+
+<LI>Peter Fenwick, Block Sorting Text Compression, Proceedings of the 19th
+Australasian Computer Science Conference, Melbourne, Australia. Jan 31 -
+Feb 2, 1996.
+<A HREF="ftp://ftp.cs.auckland.ac.nz/pub/peter-f/ACSC96paper.ps">ftp://ftp.cs.auckland.ac.nz/pub/peter-f/ACSC96paper.ps</A>
+</UL>
+<HR>
+Last updated: 5 October 1999
+</BODY>
+</HTML>
+

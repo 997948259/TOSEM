@@ -1,0 +1,49 @@
+SPEC CPU2000 Benchmark Description File
+
+Benchmark Name: 197.parser
+
+Benchmark Author: Danny Sleator (sleator@cs.cmu.edu) and
+                  Davy Temperley (dt3@columbia.edu)
+
+Benchmark Program General Category: Word processing
+
+Benchmark Description:
+
+  The Link Grammar Parser is a syntactic parser of English, based on
+  link grammar, an original theory of English syntax. Given a
+  sentence, the system assigns to it a syntactic structure, which
+  consists of set of labeled links connecting pairs of words.
+
+  The parser has a dictionary of about 60000 word forms. It has
+  coverage of a wide variety of syntactic constructions, including
+  many rare and idiomatic ones. The parser is robust; it is able to
+  skip over portions of the sentence that it cannot understand, and
+  assign some structure to the rest of the sentence. It is able to
+  handle unknown vocabulary, and make intelligent guesses from context
+  about the syntactic categories of unknown words.
+
+Input Description:
+
+  The input is a sequence of proposed sentences, one per line.
+  Punctuation and case matter.
+
+Output Description:
+
+  The output is an analysis of the proposed input sentence.  The
+  analysis includes a set of links which capture the grammatical
+  structure of the sentence, a labelling of each word with an
+  appropriate part of speech tag, along with a judgement of the
+  grammaticality of the input sentence.  Words in square brackets are
+  ones that the parser deems superfluous.
+
+Programming Language:
+
+  The parser is written in ANSI C.
+
+Known portability issues: None
+
+Reference:
+
+  See http://www.link.cs.cmu.edu/link for announcements of the latest
+    version, detailed documentation, papers, source code, and rules for
+    commercial use.
