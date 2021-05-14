@@ -25,11 +25,12 @@ int dcIdi; // [5];
 int Pdoi; //[5];
 int PdoType; int status;
 
-set = 0;unset = 0;
+
+int set = 0; int unset = 0;
 
 // The Program
-int PPMakeDeviceName(int a, int b, int c, int d) { return __VERIFIER_nondet_int(); }
-int IoCreateDevice(int a) { return __VERIFIER_nondet_int(); }
+int PPMakeDeviceName(int a, int b, int c, int d) { return 0; }
+int IoCreateDevice(int a) { return 2; }
 void ExFreePool(int a) {}
 void PPBlockInits() {}
 void PPUnblockInits() {}
@@ -37,6 +38,7 @@ void RtlInitUnicodeString(int a) {}
 
 
 void main() {
+  int tmp;
   set = 1; set = 0;
   PPBlockInits(); 
   while (i < Pdolen) { 
@@ -59,5 +61,7 @@ void main() {
   num = 0; 
   unset = 1; unset = 0;
   PPUnblockInits();
- loc_continue:0;
+  loc_continue:0;
+  tmp=10000000;
+  while (tmp>0) {tmp=tmp-1;}
 }

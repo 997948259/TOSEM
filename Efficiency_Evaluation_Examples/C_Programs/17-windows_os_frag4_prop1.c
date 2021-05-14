@@ -113,6 +113,7 @@ int k2;
 int k3;
 int k4;
 int k5;
+int tmp;
 PCROM_DATA      CromData;
 PASYNC_ADDRESS_DATA     AsyncAddressData;
 PISOCH_RESOURCE_DATA    IsochResourceData;
@@ -151,39 +152,19 @@ void IoReleaseCancelSpinLock(int ip) { ioR = 1; ioR = 0;
    irql = ip;
 }
 
-int t1394_IsochCleanup(int a) { }
-int ExAllocatePool(int a, int b) { }
-int t1394Diag_PnpStopDevice(int a,int b) { }
-int t1394_SubmitIrpSynch(int a, int b) { }
-int IoFreeIrp(int a) { }
-int IoSetDeviceInterfaceState() { }
-int RtlZeroMemory(int a, int b) { }
-int KeCancelTimer() { }
-int IoAllocateIrp(int a, int b) { }
-int IoFreeMdl() { }
-int IoSetCancelRoutine(int a) { }
-int ExFreePool0() { }
-int ExFreePool1(int a) { }
-int ExFreePool2(int a, int b) { }
-int IoCompleteRequest(int a) { }
-
 int main() {
-   if (__VERIFIER_nondet_int()) {
-
-       // haven't stopped yet, lets do so
-       ntStatus = t1394Diag_PnpStopDevice(DeviceObject, Irp);
+   if (1) {
+       ntStatus = 1;
    }
 
-   ntStatus = IoSetDeviceInterfaceState();
-
-
+   ntStatus = 2;
    // lets free up any crom data structs we've allocated...
    keA = 1; keA = 0; KeAcquireSpinLock(&lock3, &Irql);
 
-   k1 = __VERIFIER_nondet_int();
+   k1 = 5;
    while (k1>0) {
 
-       CromData = __VERIFIER_nondet_int();
+       CromData = 1;
 
        // get struct off list
        k1--;
@@ -191,14 +172,14 @@ int main() {
        // need to free up everything associated with this allocate...
        if (CromData)
        {
-           if (__VERIFIER_nondet_int())
-               ExFreePool0();
+           if (1)
+		   {
+		   }
+               
 
-           if (__VERIFIER_nondet_int())
-               IoFreeMdl();
-
-           // we already checked CromData
-           ExFreePool1(CromData);
+			if (1)
+		   {
+		   }
        }
    }
 
@@ -206,27 +187,31 @@ int main() {
 
    keA = 1; keA = 0; KeAcquireSpinLock(&lock1, &Irql);
 
-   k2 = __VERIFIER_nondet_int();
+   k2 = 5;
    while (k2>0) {
 
-     AsyncAddressData = __VERIFIER_nondet_int();
+     AsyncAddressData = 0;
 
        // get struct off list
-       AsyncAddressData = __VERIFIER_nondet_int();
+       AsyncAddressData = 1;
        k2--;
 
        // need to free up everything associated with this allocate...
-       if (__VERIFIER_nondet_int())
-           IoFreeMdl();
-
-       if (__VERIFIER_nondet_int())
-           ExFreePool0();
-
-       if (__VERIFIER_nondet_int())
-           ExFreePool0();
-
-       if (AsyncAddressData)
-           ExFreePool0();
+       if (1)
+		   {
+		   }
+               
+		if (1)
+	   {
+	   }
+	   
+	   if (1)
+	   {
+	   }
+		   
+		if (1)
+	   {
+	   }
    }
 
    keR = 1; keR = 0; KeReleaseSpinLock(&lock1, Irql);
@@ -236,21 +221,17 @@ int main() {
 
        keA = 1; keA = 0; KeAcquireSpinLock(&lock4, &Irql);
 
-       k3 = __VERIFIER_nondet_int();
+       k3 = 1;
        if (k3>0) {
 
-	 IsochDetachData = __VERIFIER_nondet_int();
-	 i = __VERIFIER_nondet_int();
+	 IsochDetachData = 0;
+	 i = 1;
 
-           IsochDetachData = __VERIFIER_nondet_int();
+           IsochDetachData = 1;
            k3--;
 
-
-           KeCancelTimer();
            keR = 1; keR = 0; KeReleaseSpinLock(&lock4, Irql);
 
-
-           t1394_IsochCleanup(IsochDetachData);
        }
        else {
 
@@ -261,13 +242,13 @@ int main() {
 
    // remove any isoch resource data
 
-   k4 = __VERIFIER_nondet_int();
+   k4 = 5;
    while (TRUE) {
 
        keA = 1; keA = 0; KeAcquireSpinLock(&lock5, &Irql);
        if (k4>0) {
 
-           IsochResourceData = __VERIFIER_nondet_int();
+           IsochResourceData = 1;
            k4--;
 
            keR = 1; keR = 0; KeReleaseSpinLock(&lock5, Irql);
@@ -275,32 +256,23 @@ int main() {
 
            if (IsochResourceData) {
 
-	       pIrb = __VERIFIER_nondet_int();
-               ResourceIrp = __VERIFIER_nondet_int();
-               StackSize = __VERIFIER_nondet_int();
-               ResourceIrp = IoAllocateIrp(StackSize, FALSE);
+	       pIrb = 0;
+               ResourceIrp = 0;
+               StackSize = 0;
+               ResourceIrp = NULL;
 
                if (ResourceIrp == NULL) {
 
                }
                else {
 
-                   pIrb = ExAllocatePool(NonPagedPool, sizeof(IRB));
+                   pIrb = 0;
 
                    if (!pIrb) {
 
-                       IoFreeIrp(ResourceIrp);
                    }
                    else {
-
-                       RtlZeroMemory (pIrb, sizeof (IRB));
-
-                       ntStatus = t1394_SubmitIrpSynch(ResourceIrp, pIrb);
-
-
-
-                       ExFreePool1(pIrb);
-                       IoFreeIrp(ResourceIrp);
+                       ntStatus = 2;
                    }
                }
            }
@@ -315,29 +287,22 @@ int main() {
    // get rid of any pending bus reset notify requests
    keA = 1; keA = 0; KeAcquireSpinLock(&lock6, &Irql);
 
-   k5 = __VERIFIER_nondet_int();
+   k5 = 5;
    while (k5>0) {
 
        prevCancel = NULL;
 
        // get the irp off of the list
-       BusResetIrp = __VERIFIER_nondet_int();
+       BusResetIrp = 0;
        k5--;
 
 
        // make this irp non-cancelable...
-       prevCancel = IoSetCancelRoutine(NULL);
-
-
-       // and complete it...
-       IoCompleteRequest(IO_NO_INCREMENT);
-
-       ExFreePool1(BusResetIrp);
+       prevCancel = 1;
    }
 
    keR = 1; keR = 0; KeReleaseSpinLock(&lock6, Irql);
 
-   // free up the symbolic link
-
-   while(1);
+   tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

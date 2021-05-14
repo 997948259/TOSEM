@@ -16,26 +16,23 @@ extern int __VERIFIER_nondet_int();
 
 int Stored;
 void init() { Stored = 0; }
-void callback() {}
-void IoQueueWorkItem() {}
+int tmp;
 void main() {
-    while(__VERIFIER_nondet_int()) {
-           if (__VERIFIER_nondet_int()) {
-               //
-               // We are safely at PASSIVE_LEVEL, call callback directly
-               // to perform
-               // this operation immediately.
-               //
-               callback ();
+	init();
+	tmp=10;
+    while(tmp>0) {
+           if (1) {
+               
            } else {
-	       IoQueueWorkItem ();
                Stored = 1;
                break;
            }
+		   tmp--;
     }
     // Lower Irql and process
     if (Stored==1) {
-        callback ();
         Stored = 0;
     }
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

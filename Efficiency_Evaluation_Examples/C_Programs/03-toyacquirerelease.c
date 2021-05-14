@@ -14,21 +14,25 @@ extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 extern void __VERIFIER_assume();
 extern int __VERIFIER_nondet_int();
 
-a = 0;
-r = 0;
+int a = 0;
+int r = 0;
 
 int main() {
    int n;
-  while(__VERIFIER_nondet_int()) {
+   int tmp;
+   tmp=10;
+  while(tmp>0) {
     a = 1;
     a = 0;
-    n = __VERIFIER_nondet_int();
+    n = 1;
     while(n>0) {
       n--;
     }
     r = 1;
     r = 0;
+	tmp=tmp-1;
   }
-  while(1) { int x; x=x; }
+  tmp=10000000;
+  while (tmp>0) {tmp=tmp-1;}
   return 0;
 }

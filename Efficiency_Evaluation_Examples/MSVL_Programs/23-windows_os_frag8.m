@@ -5,25 +5,6 @@
   som(alw(p))
 />
 
-
-//void ExAcquireFastMutex() {}
-
-//void ExReleaseFastMutex() {}
-
-//#define GetStatus __VERIFIER_nondet_int
-//#define IoInvalidateDeviceRelations __VERIFIER_nondet_int
-
-//#define KeWaitForSingleObject __VERIFIER_nondet_int
-
-//#define P4ReadRawIeee1284DeviceId __VERIFIER_nondet_int
-
-//#define HTPnpFindDeviceIdKeys __VERIFIER_nondet_int
-//#define HtFreePort __VERIFIER_nondet_int
-//#define HtRegGetDword __VERIFIER_nondet_int
-//#define HtTryAllocatePort __VERIFIER_nondet_int
-//#define SetFlags __VERIFIER_nondet_int
-//#define CountLookup __VERIFIER_nondet_int
-
 frame(WarmPollPeriod,
 status,
 polling,
@@ -34,6 +15,7 @@ timeOut1,
 deviceStatus,
 devId,
 requestRescan,
+tmp,
 ddd,
 mfg, mdl, cls, des, aid, cid,
 break_1
@@ -50,27 +32,21 @@ int   status and
 int   deviceStatus and
 int   devId and
 int   requestRescan and
+int tmp and
 int ddd and
-int  mfg, 
-mdl<==1,
- cls, 
- des, 
- aid, 
- cid 
- and
+int  mfg and 
+int mdl and
+int cls and 
+int des and 
+int aid and 
+int cid and
 
-int break_1<==0 and
-
-WarmPollPeriod <==0// __VERIFIER_nondet_int()
-and
-status <== 2//__VERIFIER_nondet_int()
-and
-polling <== 0 //__VERIFIER_nondet_int() 
-and
-Count <== 10 //__VERIFIER_nondet_int()
-and
-PowerStateIsAC <== 0 //__VERIFIER_nondet_int()
-and skip;
+int break_1<==0 and skip;
+WarmPollPeriod :=0;
+status := 2;
+polling := 0; 
+PowerStateIsAC := 0;
+Count := 10;
 
 main()
 
@@ -78,11 +54,9 @@ main()
   
 function main() {
    if( status>0  ) then{
-      // ExAcquireFastMutex();
-       //SetFlags();
-       //ExReleaseFastMutex();
-       WarmPollPeriod := 3;//HtRegGetDword();
-       if( WarmPollPeriod < 5 ) then{
+       WarmPollPeriod := 3;
+       if( WarmPollPeriod < 5 ) then
+	   {
            WarmPollPeriod := 5
        } 
 	   else 
@@ -92,93 +66,114 @@ function main() {
                WarmPollPeriod := 20
            }
        };
-       //{
-           //if (__VERIFIER_nondet_int()) {
-               // We've got it.  Now get a pointer to it.
-             //  if(__VERIFIER_nondet_int()) {
-//---------------------------------------------
-             ( (// {             
-                   Count :=6;// CountLookup();
-                   if(Count>0 AND !break_1)then
+           if (1) then 
+		   {
+              if(1) then 
+			  {        
+                   Count :=6;
+                   while(Count>0 AND !break_1)
 				   {
-                      /* if( PowerStateIsAC ) {
-                       } else {
-                       }*/
-                       (status := -1 
-					  ) ;//KeWaitForSingleObject();
-                       /*if( __VERIFIER_nondet_int() ) {
-                           break;
-                       }*/
-					   (break_1:=1 
-					   );
+                       if( PowerStateIsAC ) then
+					   {
+							skip
+                       } 
+					   else 
+					   {
+							skip
+                       };
+                       status := -1;
+                       if(0) then
+					   {
+                           break_1:=1
+                       };
 					   if(!break_1)then
 					   {
-                      /* if( !PowerStateIsAC ) 
-					  {
-			 //goto mylabl;
-                       }*/
-                       if(  status= -1 ) then
-					   {
-                           //if( __VERIFIER_nondet_int() ) {
-                               // try to acquire port
-                              // if( HtTryAllocatePort() ) {
-                              //  ((   
-								requestRescan := 0;
-                                   // check for something connected
-                                   deviceStatus :=0;// GetStatus();
-                                  // if( __VERIFIER_nondet_int()) {
-                                  // } else {
-                                       // we might have something connected
-                                       // try a device ID to confirm
-                             // (skip or 
-        							//  (
-							           (devId :=1 								   
-									   or devId :=0);//P4ReadRawIeee1284DeviceId();
-                                       if( devId )then
-									   {                                          
-                                          // RawIeee1284 string includes 2 bytes of length data at beginning
-                                           //HTPnpFindDeviceIdKeys();
-										   mfg:=1;
-                                           if( mfg AND mdl ) then{
-                                               requestRescan := 1
-                                           }
-                                       } else {
-									    skip
-                                       }
-                                       //if( requestRescan ) {
-                                       //} else {									   
-                                         //  if(__VERIFIER_nondet_int() ) {
-                                        //   }
-                                      // }
-									 //  ))
-                                   //}
-                                   //HtFreePort( );
-								   
-                                   //if( requestRescan ) {
-								   
-                                    //   IoInvalidateDeviceRelations();
-                                   //}
-								   
-                             // ) or skip)// } else {
-                              // }
-                           //} else {
-                           //}
-                       };
+						   if( !PowerStateIsAC ) then 
+						   {
+								skip
+						   };
+						   if(  status= -1 ) then
+						   {
+							   if( 1 ) then
+							   {
+								   // try to acquire port
+									if( 1 ) then
+									{  
+										requestRescan := 0;
+									   // check for something connected
+									   deviceStatus :=0;
+									   if( 1) then
+									   {
+											skip
+									   } 
+									   else 
+									   {
+										   // we might have something connected
+										   // try a device ID to confirm
+											devId :=1;
+										   if( devId )then
+										   {                                          
+											  // RawIeee1284 string includes 2 bytes of length data at beginning
+											   
+											   if( mfg AND mdl ) then
+											   {
+												   requestRescan := 1
+											   }
+										   } 
+										   else 
+										   {
+												skip
+										   };
+										   if( requestRescan ) then 
+										   {
+												skip
+										   } 
+										   else 
+										   {									   
+											   if(1) then 
+											   {
+													skip
+											   }
+										   }
+									   };
+									  
+									   if( requestRescan ) then 
+									   {
+											skip
+									   }
+									   
+									} 
+									else 
+									{
+										skip
+								   }
+							   } 
+							   else 
+							   {
+									skip
+							   }
+						   };
 					   
 		              ddd := ddd;
 					  Count:=Count-1
 					  }
                    }
-               //}
-//---------------------------------------------
-               ))
-			   //} else {
-                   // error
-              // }
-           //} else {
-           //}
-       //}
+               }
+				else 
+				{
+                   skip
+               }
+           } 
+		   else 
+		   {
+				skip
+           }
    };
    // Failsafe
-   polling := 1
+   polling := 1;
+   tmp:=10000000;
+    while(tmp>0)
+    {
+	  tmp:=tmp-1
+    }
 }

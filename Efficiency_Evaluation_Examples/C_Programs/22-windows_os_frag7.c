@@ -15,30 +15,25 @@ extern void __VERIFIER_assume();
 extern int __VERIFIER_nondet_int();
 
 int WItemsNum;
-
-WItemsNum = __VERIFIER_nondet_int();
-
-void callback1() {}
-void callback2() {}
-#define MoreWItems() __VERIFIER_nondet_int()
+int tmp;
 
 void main() {
-    WItemsNum = __VERIFIER_nondet_int();
-    while(1) {
-        while(WItemsNum<=5 || MoreWItems()) {
+    WItemsNum = -1;
+	tmp=10;
+    while(tmp>0) {
+        while(WItemsNum<=5) {
                if (WItemsNum<=5) {
-                   callback1();
                    WItemsNum++;
-    
                } else {
                    WItemsNum++;
                }
         }
-    
         while(WItemsNum>2) {
-             callback2();
              WItemsNum--;
         }
+		tmp--;
     }
-    while(1) {}
+    tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }
+

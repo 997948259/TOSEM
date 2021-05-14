@@ -23,7 +23,8 @@ unsigned short icrc1(unsigned short crc, unsigned char onech)
        unsigned char rchrIndex1;
 	unsigned char rchrIndex2;
 	unsigned short init=0;
-	unsigned short j;
+	unsigned short j=0;
+	int tmp;
 unsigned short icrc(unsigned short crc, unsigned long len, 
 		    short jinit, int jrev)
 {
@@ -120,6 +121,8 @@ int main(void)
 		lin[n+1]=HIBYTE(i1);
 		lin[n+2]=LOBYTE(i1);
 		i2=icrc(i1,n+2,(short)0,1);
+		tmp=10000000;
+		while (tmp>0) {tmp=tmp-1;}
 	return 0;
 }
 

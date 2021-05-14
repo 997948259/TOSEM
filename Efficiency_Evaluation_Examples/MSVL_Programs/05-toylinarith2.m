@@ -6,44 +6,35 @@
   p->som(q)
 />
 
-frame(c,servers,resp,curr_serv,serversdiv2,ddd) and
+frame(c,servers,resp,curr_serv,serversdiv2,tmp) and
 (
-unsigned int c and int ddd and
-int servers and
-int resp and
-int curr_serv and
-int serversdiv2 and skip;
-((c:=2 and //c = __VERIFIER_nondet_int();
-servers:=4 and //servers = __VERIFIER_nondet_int(); 
-serversdiv2:=2)//serversdiv2 = __VERIFIER_nondet_int();
-or
-(
- c:=2 and 
- servers:=5 and
- serversdiv2:=2
-))
-;
+	unsigned int c and
+	int servers and
+	int resp and
+	int curr_serv and
+	int serversdiv2 and int tmp skip;
+	c:=2; 
+	servers:=4; 
+	serversdiv2:=2;
 
-if(servers>0 AND c > 0)then //__VERIFIER_assume(servers>0 && c > 0); 
-{
-	/*if(__VERIFIER_nondet_int())
-		__VERIFIER_assume(serversdiv2+serversdiv2==servers);
-	else
-		__VERIFIER_assume(serversdiv2+serversdiv2+1==servers);*/
-	resp <== 0 and skip;
-	curr_serv <== servers and skip;
-  
-	if(curr_serv > 0)then {
-		(
+	resp := 0;
+	curr_serv := servers;
+	while(curr_serv > 0)
+	{
+		if(1)then 
+		{
 			c:=c-1; 
 			curr_serv:=curr_serv-1;
 			resp:=resp+1
-		)
-		or
-		(
-			if(c<curr_serv)then//__VERIFIER_assume(c < curr_serv);
-			{curr_serv:=curr_serv-1}
-		)
+		}
+		else
+		{
+			curr_serv:=curr_serv-1
+		}
+	};
+	tmp:=10000000;
+	while(tmp>0)
+	{
+		tmp:=tmp-1
 	}
-}
 )

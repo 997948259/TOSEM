@@ -1,6 +1,7 @@
 //@ ltl invariant positive: [] (AP(i<=(n+1)));
 
 int  i, Fnew, Fold, temp,ans, n;
+int tmp;
 int main()
 {
 	
@@ -17,6 +18,8 @@ int main()
     	}
 
     	ans = Fnew;
+		tmp=10000000;
+		while (tmp>0) {tmp=tmp-1;}
   	
 
 	return 0;

@@ -8,7 +8,7 @@
 //
 // ****************************************************
 
-//@ ltl invariant positive: [](AP(added>=0) ==> <>[]AP(ret==1));
+//@ ltl invariant positive: [](AP(added>0) ==> <>[]AP(ret==1));
 
 extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 extern void __VERIFIER_assume();
@@ -44,7 +44,6 @@ int closed;
 int MaxBackends;
 int family;
 char *hostName;
-unsigned short portNumber;
 char *unixSocketName;
 int MaxListen;
 int fd, err;
@@ -66,27 +65,23 @@ int addrs;
 one = 1;
 listen_index = 0;
 added = 0;
-MAXADDR = __VERIFIER_nondet_int();
-addrs = __VERIFIER_nondet_int();
-MaxBackends = __VERIFIER_nondet_int();
-ret = __VERIFIER_nondet_int();
+MAXADDR = 5;
+addrs = 0;
+MaxBackends = 6;
+ret = 0;
 
 void main()
 {
-	__VERIFIER_assume(addrs>=0);
-	__VERIFIER_assume(MaxBackends>0);
-
 	if (family == AF_UNIX)
 	{
 		service = sock_path;
 	}
 	else
 	{
-		snprintf(1, sizeof(1), "%d", portNumber);
 		service = 1;
 	}
 
-	ret = getaddrinfo_all(hostName, service, &hint, &addrs);
+	ret = 1;
 	if (ret || !addrs)
 	{
 		if (hostName) 
@@ -101,7 +96,7 @@ void main()
 	
 	for (addr = addrs; addr < MAXADDR; addr++)
 	{
-		if (!IS_AF_UNIX(family) && IS_AF_UNIX(addr_ai_family))
+		if (0)
 		{
 			goto loc_continue;
 		}
@@ -118,44 +113,30 @@ void main()
 
 		if(addr_ai_family==AF_INET) 
 		{
-			gettext("IPv4");
+			
 		} 
 		else if(addr_ai_family==AF_INET6) 
 		{
-			gettext("IPv6");
+			
 		} 
 		else if(addr_ai_family==AF_UNIX) 
 		{
-			gettext("Unix");
+			;
 		}
 		else 
 		{
-			snprintf(1, 1, gettext("unrecognized address family %d"), addr_ai_family);
+			
 		}
 
-		if ((fd = __VERIFIER_nondet_int()))
+		if ((fd = 1))
 		{
 			goto loc_continue;
 		}
-
-		if (__VERIFIER_nondet_int()) 
-		{
-			if (__VERIFIER_nondet_int()) 
-			{
-				goto loc_continue;
-			}
-		}
-
-		if (__VERIFIER_nondet_int()) 
-		{
-			if (__VERIFIER_nondet_int()) 
-			{
-				closesocket(fd);
-				goto loc_continue;
-			}
-		}
-
-		err = __VERIFIER_nondet_int();
+		
+		closesocket(fd);
+		goto loc_continue;
+		
+		err = -1;
 		if (err < 0)
 		{
 			closesocket(fd);
@@ -164,7 +145,7 @@ void main()
 
 		if (addr_ai_family == AF_UNIX)
 		{
-			if (__VERIFIER_nondet_int() != STATUS_OK)
+			if (0 != STATUS_OK)
 			{
 				closesocket(fd);
 				break;
@@ -175,7 +156,7 @@ void main()
 		if (maxconn > PG_SOMAXCONN)
 			maxconn = PG_SOMAXCONN;
 
-		err = listen(fd, maxconn);
+		err = -1;
 		if (err < 0)
 		{
 			closesocket(fd);
@@ -194,9 +175,14 @@ void main()
 	if (!added) 
 	{
 		ret = STATUS_ERROR;
-		while(1) { int rrr; rrr=rrr; }
+		tmp=10000000;
+		while (tmp>0) {tmp=tmp-1;}
 	}
-
-	ret = STATUS_ERROR;
-	while(1) { int ddd; ddd=ddd; }
+	else
+	{
+		ret = STATUS_ERROR;
+		tmp=10000000;
+		while (tmp>0) {tmp=tmp-1;}
+	}
+	
 }

@@ -49,12 +49,13 @@ ULONG             SecondHalf;
 KIRQL             CancelIrql;
 BOOLEAN           LockHeld;
 SERIAL_TIMEOUTS   CurrentTimeouts;
+int tmp;
 
 
-  A = R = 0; 
+  a = r = 0; 
   status = STATUS_UNSUCCESSFUL; 
-  CurrentTimeouts = __VERIFIER_nondet_int();
-  k = __VERIFIER_nondet_int();
+  CurrentTimeouts = 0;
+  k = 6;
 
 void KeAcquireSpinLock(int * lp, int * ip) {
   (*lp) = 1;
@@ -77,97 +78,74 @@ void IoReleaseCancelSpinLock(int ip) {
   irql = ip;
 }
 
-int IoGetCurrentIrpStackLocation(int a) {}
-
-void RemoveReferenceAndCompleteRequest(int a, int b) {}
 
 void main()
 {
 
-  a = 1; a = 0; // KeAcquireSpinLock( &lock, &OldIrql);
+  a = 1; a = 0; 
 
-  while ((__VERIFIER_nondet_int() && k>0) && (__VERIFIER_nondet_int() || __VERIFIER_nondet_int())) {
+  while (k>0) {
 
-    ListElement = __VERIFIER_nondet_int();
-    Irp = __VERIFIER_nondet_int();
-    IrpSp = __VERIFIER_nondet_int();
-    CancelIrql = __VERIFIER_nondet_int();
+    ListElement = 0;
+    Irp = 0;
+    IrpSp = 0;
+    CancelIrql = 0;
 
     k--;
 
-    Irp= __VERIFIER_nondet_int();
+    Irp= 0;
 
     IoAcquireCancelSpinLock(&CancelIrql);
 
-    if (__VERIFIER_nondet_int()) {
+    if (1) {
 
       IoReleaseCancelSpinLock(CancelIrql);
-
       continue;
     }
 
-    // IoSetCancelRoutine(Irp, NULL);
     IoReleaseCancelSpinLock(CancelIrql);
-    r = 1;r = 0; // KeReleaseSpinLock(&lock, OldIrql);
+    r = 1;r = 0; 
 
-    //CALL TO TryToSatisfyRead( deviceExtension);
-    {
       status=STATUS_UNSUCCESSFUL;
       Irp=NULL;
       LockHeld = TRUE;
 
-      a = 1; a= 0; //KeAcquireSpinLock(&lock,&OldIrql);
+      a = 1; a= 0; 
 
-      if (__VERIFIER_nondet_int() && __VERIFIER_nondet_int()) {
-	//
-	//  there is an IRP and there are characters waiting
-	//
-	Irp=__VERIFIER_nondet_int();
+      if (1) {
+		Irp=0;
 
-	IrpSp=IoGetCurrentIrpStackLocation(Irp);
+		IrpSp=0;
 
-	BytesToMove=__VERIFIER_nondet_int();
-
-	if (__VERIFIER_nondet_int()) {
-	  FirstHalf=__VERIFIER_nondet_int();
-
-	  SecondHalf=BytesToMove-FirstHalf;
-
-
-	} else {
-	}
+		BytesToMove=6;
+		if (1) {
+		  FirstHalf=5;
+		  SecondHalf=BytesToMove-FirstHalf;
+		} 
+		else {
+		}
       }
       else
 	{
-	  if (__VERIFIER_nondet_int())
+	  if (1)
 	    {
-	      Irp = __VERIFIER_nondet_int();
-
-
+	      Irp = 0;
 	      IoAcquireCancelSpinLock(&CancelIrql);
-	      if (__VERIFIER_nondet_int())
+	      
+		  if (1)
 		{
 		  IoReleaseCancelSpinLock(CancelIrql);
-
-		  r = 1; r = 0; // KeReleaseSpinLock( &lock, OldIrql);
-
-		  RemoveReferenceAndCompleteRequest(Irp,
-						    STATUS_CANCELLED);
+		  r = 1; r = 0; 
 		  LockHeld = FALSE;
 		}
 	      else
 		{
-		  CurrentTimeouts = __VERIFIER_nondet_int();
+		  CurrentTimeouts = 0;
 
-		  if(__VERIFIER_nondet_int())
+		  if(1)
 		    {
 		      IoReleaseCancelSpinLock(CancelIrql);
-
-		      r = 1; r = 0; // KeReleaseSpinLock( &lock, OldIrql);
-
-		      RemoveReferenceAndCompleteRequest(
-							Irp, STATUS_TIMEOUT);
-
+		      r = 1; r = 0;
 		      LockHeld = FALSE;
 		    }
 		  else
@@ -184,28 +162,16 @@ void main()
 
       if (LockHeld == 1)
 	{
-	  r = 1; r = 0; //KeReleaseSpinLock( &lock, OldIrql);
+	  r = 1; r = 0; 
 	}
 
       if (Irp != 0) {
-	//
-	//  if irp isn't null, then we handled one
-	//
-	RemoveReferenceAndCompleteRequest(Irp, STATUS_SUCCESS);
-
-
+      }
+    a=1; a=0; 
       }
 
+  r=1; r=0; 
 
-
-    }
-    //-------------------------------------------------------------
-    a=1; a=0; // KeAcquireSpinLock(&lock, &OldIrql)
-      }
-
-  r=1; r=0; //KeReleaseSpinLock( &lock, OldIrql);
-
-  while(1) {
-    { int ddd; ddd = ddd; }
-  }
+  tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

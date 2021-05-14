@@ -30,7 +30,7 @@ struct DATA data[15] = { {1, 100},
 	     {18, 10} };
 
 int index;
-int fvalue, mid, up, low;
+int fvalue, mid, up, low,tmp;
 int main(void)
 {
 	index=8;
@@ -73,6 +73,8 @@ int binary_search(int x)
   }
 
 	printf("Loop Count : %d\n", cnt1);
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 
   return fvalue;
 }

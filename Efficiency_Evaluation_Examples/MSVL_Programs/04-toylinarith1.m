@@ -6,30 +6,34 @@
  define q: resp>5;
  p->som(q)
 />
-frame(c,servers,resp,curr_serv,ddd) and
+frame(c,servers,resp,curr_serv,tmp) and
 (
 int c and
 int servers and
 int resp and
 int curr_serv and
-int ddd and
+int tmp and skip;
 
-c<==6 and   //c>0 的任意值
-servers<== 4 and
-resp <== 0 and
-curr_serv <== 4 and skip;
+c:=6;   
+servers := 4 and
+resp := 0 and
+curr_serv := servers;
 
   while(curr_serv > 0) {
-   (
-      c:=c-1;
+	if(1) then
+	{
+	  c:=c-1;
       curr_serv:=curr_serv-1;
-      resp:=resp+1)
-     or
-	 (
-	   if(c<curr_serv)then ///__VERIFIER_assume(c < curr_serv);
-	   {
-	     curr_serv:=curr_serv-1
-	   }
-	 )
+      resp:=resp+1
+	}
+    else
+	{
+	  curr_serv:=curr_serv-1
+	}
+  };
+  tmp:=10000000;
+  while(tmp>0)
+  {
+	tmp:=tmp-1
   }
 )

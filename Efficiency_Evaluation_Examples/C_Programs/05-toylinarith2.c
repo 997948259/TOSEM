@@ -15,34 +15,28 @@ extern void __VERIFIER_assume();
 extern int __VERIFIER_nondet_int();
 
 unsigned int c;
-int servers ;
+int servers;
 int resp;
 int curr_serv;
 int serversdiv2;
 
-c = __VERIFIER_nondet_int();
-servers = __VERIFIER_nondet_int(); 
-serversdiv2 = __VERIFIER_nondet_int();
+c = 2;
+servers = 4; 
+serversdiv2 = 2;
   
 int main() {
-	__VERIFIER_assume(servers>0 && c > 0); 
 
-	if(__VERIFIER_nondet_int())
-		__VERIFIER_assume(serversdiv2+serversdiv2==servers);
-	else
-		__VERIFIER_assume(serversdiv2+serversdiv2+1==servers);
 	resp = 0;
 	curr_serv = servers;
   
-  
 	while(curr_serv > 0) {
-		if(__VERIFIER_nondet_int()) {
+		if(1) {
 			c--; curr_serv--;
 			resp++;
 		} else {
-			__VERIFIER_assume(c < curr_serv);
 			curr_serv--;
 		}
 	}
-	while(1) { int ddd; ddd=ddd; }
+	tmp=10000000;
+    while (tmp>0) {tmp=tmp-1;}
 }

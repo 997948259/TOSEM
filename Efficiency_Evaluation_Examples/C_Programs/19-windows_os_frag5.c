@@ -97,18 +97,8 @@ UCHAR LParity;
 UCHAR Mask;
 int keA; 
 int keR;
-/*
-void KeAcquireSpinLock(int * lp, int * ip) {
-   (*lp) = 1;
-   (*ip) = irql;
-}
-*/
-/*
-void KeReleaseSpinLock(int * lp, int i) {
-   (*lp) = 0;
-   irql = i;
-}
-*/
+int tmp;
+
 void IoAcquireCancelSpinLock(int * ip) {
    csl = 1;
    (*ip) = irql;
@@ -117,13 +107,6 @@ void IoReleaseCancelSpinLock(int ip) {
    csl = 0;
    irql = ip;
 }
-void IoMarkIrpPending(int x) {}
-// This could be modelled in more detail
-void RemoveReferenceAndCompleteRequest(int x,int y) {}
-// This could be modelled in more detail
-void RemoveReferenceForDispatch(int x) {}
-// This could be modelled in more detail
-void ProcessConnectionStateChange(int x) {}
 int DeviceObject;
 int Irp;
 NTSTATUS          status;
@@ -134,21 +117,20 @@ NTSTATUS main()
 	keA = keR = 0;
 	//DD: init lock with 0 to avoid trivial satisfaction
 	lock = 0;
-	CancelIrql = __VERIFIER_nondet_int();
-	irql = __VERIFIER_nondet_int();
-	csl = __VERIFIER_nondet_int();
-	DeviceObject = __VERIFIER_nondet_int();
-	Irp = __VERIFIER_nondet_int();
-	status=STATUS_UNSUCCESSFUL;
-	OldIrql;
-	status = __VERIFIER_nondet_int();
+	CancelIrql = 0;
+	irql = 0;
+	csl = 0;
+	DeviceObject = 0;
+	Irp = 0;
+	status=1;
+	status = 2;
 	keA = 0;
 	keR = 0;
-	length = __VERIFIER_nondet_int();
-	NewTimeouts = __VERIFIER_nondet_int();
-	SerialStatus=__VERIFIER_nondet_int();
-	pBaudRate = __VERIFIER_nondet_int();
-	pLineControl = __VERIFIER_nondet_int();
+	length = 2;
+	NewTimeouts = 0;
+	SerialStatus=0;
+	pBaudRate = 0;
+	pLineControl =0;
 	LData = 0;
 	LStop = 0;
 	LParity = 0;
@@ -160,18 +142,18 @@ NTSTATUS main()
 	
 	if(1) 
 	{
-		if(__VERIFIER_nondet_int()) 
+		if(0) 
 		{
-			if (__VERIFIER_nondet_int()) 
+			if (0) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
 			CurrentWaitIrp=0;
-			NewMask = __VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			NewMask = 0;
+			if (0) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			} 
@@ -179,46 +161,45 @@ NTSTATUS main()
 			{
 				keA = 1; keA = 0; 
 				lock = 1; OldIrql = irql;
-				NewMask = __VERIFIER_nondet_int();
+				NewMask = 0;
 				keR = 1; keR = 0; 
 				lock = 0; irql = OldIrql;
 				if (CurrentWaitIrp != 0) 
 				{
-					RemoveReferenceAndCompleteRequest(CurrentWaitIrp, STATUS_SUCCESS);
+					
 				}
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
 			CurrentWaitIrp=0;
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
 			keA = 1; keA = 0; 
 			lock = 1; OldIrql = irql;
-			CurrentWaitIrp=__VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			CurrentWaitIrp=0;
+			if (1) 
 			{
 				status=STATUS_UNSUCCESSFUL;
 			} 
 			else 
 			{
-				IoMarkIrpPending(Irp);
 				status=STATUS_PENDING;
 			}
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 			if (CurrentWaitIrp != 0) 
 			{
-				RemoveReferenceAndCompleteRequest(CurrentWaitIrp, STATUS_SUCCESS);
+				
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			CancelIrp = __VERIFIER_nondet_int();
-			Mask= __VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			CancelIrp = 0;
+			Mask= 1;
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
@@ -227,13 +208,13 @@ NTSTATUS main()
 			{
 				keA = 1; keA = 0; 
 				lock = 1; OldIrql = irql;
-				length = __VERIFIER_nondet_int();
+				length = 2;
 				while (length>0) 
 				{
 					length--;
-					CancelIrp=__VERIFIER_nondet_int();
+					CancelIrp=0;
 					IoAcquireCancelSpinLock(&CancelIrql);
-					if (__VERIFIER_nondet_int()) 
+					if (1) 
 					{
 						IoReleaseCancelSpinLock(CancelIrql);
 						continue;
@@ -241,38 +222,37 @@ NTSTATUS main()
 					IoReleaseCancelSpinLock(CancelIrql);
 					keR = 1; keR = 0; 
 					lock = 0; irql = OldIrql;
-					RemoveReferenceAndCompleteRequest(CancelIrp, STATUS_CANCELLED);
 					keA = 1; keA = 0; 
 					lock = 1; OldIrql = irql;
                }
                CancelIrp=NULL;
-               if (__VERIFIER_nondet_int())
+               if (1)
                {
-					CancelIrp=__VERIFIER_nondet_int();
+					CancelIrp=0;
                }
                keR = 1; keR = 0; 
 			   lock = 0; irql = OldIrql;
                if (CancelIrp != NULL) 
 			   {
-					RemoveReferenceAndCompleteRequest(CancelIrp, STATUS_CANCELLED);
+					
                }
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-           if (__VERIFIER_nondet_int()) 
+           if (1) 
 		   {
 				status = STATUS_BUFFER_TOO_SMALL;
            }
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			NewTimeouts = __VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			NewTimeouts = 0;
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_INVALID_PARAMETER;
 			}
@@ -281,9 +261,9 @@ NTSTATUS main()
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
@@ -292,10 +272,10 @@ NTSTATUS main()
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 		}
-		else if(__VERIFIER_nondet_int()) 
+		else if(1) 
 		{
-			SerialStatus=__VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			SerialStatus=0;
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
@@ -304,48 +284,32 @@ NTSTATUS main()
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
 		   keA = 1; keA = 0; 
 		   lock = 1; OldIrql = irql;
-		   if (__VERIFIER_nondet_int()) 
+		   if (1) 
 		   {
 		   } 
 		   else 
 		   {
-				if (__VERIFIER_nondet_int()) 
+				if (1) 
 				{
 				}
 		   }
 		   keR = 1; keR = 0; 
 		   lock = 0; irql = OldIrql;
-		   ProcessConnectionStateChange(DeviceObject);
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			if (__VERIFIER_nondet_int()) 
-			{
-				status = STATUS_BUFFER_TOO_SMALL;
-			} 
-			else 
-			{
-				keA = 1; keA = 0; 
-				lock = 1; OldIrql = irql;
-				keR = 1; keR = 0; 
-				lock = 0; irql = OldIrql;
-			}
-		}
-		else if(__VERIFIER_nondet_int()) 
-		{
-			pBaudRate = __VERIFIER_nondet_int();
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			} 
@@ -357,35 +321,50 @@ NTSTATUS main()
 				lock = 0; irql = OldIrql;
 			}
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1) 
 		{
-			pLineControl = __VERIFIER_nondet_int();
+			pBaudRate = 0;
+			if (1) 
+			{
+				status = STATUS_BUFFER_TOO_SMALL;
+			} 
+			else 
+			{
+				keA = 1; keA = 0; 
+				lock = 1; OldIrql = irql;
+				keR = 1; keR = 0; 
+				lock = 0; irql = OldIrql;
+			}
+		}
+		else if(1)
+		{
+			pLineControl = 0;
 			LData = 0;
 			LStop = 0;
 			LParity = 0;
 			Mask = 0xff;
-			if (__VERIFIER_nondet_int()) 
+			if (1) 
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
 			if(1) 
 			{ 
-				if(__VERIFIER_nondet_int()) /* case 5:*/ 
+				if(1) /* case 5:*/ 
 				{
 					LData = SERIAL_5_DATA;
 					Mask = 0x1f;
 				}
-				else if(__VERIFIER_nondet_int()) /* case 6:*/ 
+				else if(1) /* case 6:*/ 
 				{
 					LData = SERIAL_6_DATA;
 					Mask = 0x3f;
 				}
-				else if(__VERIFIER_nondet_int()) /* case 7:*/ 
+				else if(1) /* case 7:*/ 
 				{
 					LData = SERIAL_7_DATA;
 					Mask = 0x7f;
 				}
-				else if(__VERIFIER_nondet_int()) /* case 8:*/ 
+				else if(1) /* case 8:*/ 
 				{
                    LData = SERIAL_8_DATA;
 				}
@@ -400,23 +379,23 @@ NTSTATUS main()
 			}
 			if(1) 
 			{
-				if(__VERIFIER_nondet_int()) 
+				if(1) 
 				{
 					LParity = SERIAL_NONE_PARITY;
 				}
-				else if(__VERIFIER_nondet_int())
+				else if(1)
 				{
 					LParity = SERIAL_EVEN_PARITY;
 				}
-				else if(__VERIFIER_nondet_int())
+				else if(1)
 				{
 					LParity = SERIAL_ODD_PARITY;
 				}
-				else if(__VERIFIER_nondet_int())
+				else if(1)
 				{
 					LParity = SERIAL_SPACE_PARITY;
 				}
-				else if(__VERIFIER_nondet_int())
+				else if(1)
 				{
 					LParity = SERIAL_MARK_PARITY;
 				}
@@ -431,11 +410,11 @@ NTSTATUS main()
 			}
 			if (1)
 			{
-				if(__VERIFIER_nondet_int()) 
+				if(1) 
 				{
 					LStop = SERIAL_1_STOP;
 				}
-				else if(__VERIFIER_nondet_int()) 
+				else if(1) 
 				{
 					if (LData != SERIAL_5_DATA) 
 					{
@@ -443,7 +422,7 @@ NTSTATUS main()
 					}
 					LStop = SERIAL_1_5_STOP;
 				}
-				else if(__VERIFIER_nondet_int()) 
+				else if(1) 
 				{
 					if (LData == SERIAL_5_DATA) 
 					{
@@ -465,9 +444,9 @@ NTSTATUS main()
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 		}
-		else if(__VERIFIER_nondet_int())
+		else if(1)
 		{
-			if (__VERIFIER_nondet_int())  
+			if (1)  
 			{
 				status = STATUS_BUFFER_TOO_SMALL;
 			}
@@ -476,7 +455,7 @@ NTSTATUS main()
 			keR = 1; keR = 0; 
 			lock = 0; irql = OldIrql;
 		}
-		else if(__VERIFIER_nondet_int()) 
+		else if(1) 
 		{
 		}
 		else 
@@ -488,9 +467,9 @@ NTSTATUS main()
 	{
 		if (Irp != NULL)
 		{
-			RemoveReferenceAndCompleteRequest(Irp, status);
+			
 		}
 	}
-	RemoveReferenceForDispatch(DeviceObject);
-	while (1) { int rrr; rrr = rrr; }
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

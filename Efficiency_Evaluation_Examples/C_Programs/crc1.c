@@ -22,14 +22,17 @@ unsigned short icrc1(unsigned short crc, unsigned char onech)
 }
        unsigned char rchrIndex1;
 	unsigned char rchrIndex2;
+	unsigned short init=0;
+	unsigned short j=0;
+	int tmp;
 unsigned short icrc(unsigned short crc, unsigned long len, 
 		    short jinit, int jrev)
 {
 	unsigned short icrc1(unsigned short crc, unsigned char onech);
 	static unsigned short icrctb[256];
-	unsigned short init=0;
+	
 	static uchar rchr[256];
-	unsigned short tmp1, tmp2, j,cword=crc;
+	unsigned short tmp1, tmp2, cword=crc;
 	static uchar it[16]={0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15};\
      rchrIndex1=0;
 	rchrIndex2=0;
@@ -118,6 +121,8 @@ int main(void)
 		lin[n+1]=HIBYTE(i1);
 		lin[n+2]=LOBYTE(i1);
 		i2=icrc(i1,n+2,(short)0,1);
+		tmp=10000000;
+		while (tmp>0) {tmp=tmp-1;}
 	return 0;
 }
 

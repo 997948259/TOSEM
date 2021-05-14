@@ -7,9 +7,10 @@ define p: temp=Fnew;
 define q: Fold=temp;
 alw(p->som(q))
 />
-frame(i,Fnew,Fold,temp,ans,n) and
+frame(i,Fnew,Fold,temp,ans,n,tmp) and
 (
 	int i, Fnew, Fold, temp, ans and skip;
+	int tmp and skip;
 	int n<==30 and skip;
 	Fnew<==1 and skip;
 	Fold<==0 and skip;
@@ -22,6 +23,9 @@ frame(i,Fnew,Fold,temp,ans,n) and
 		i:=i+1
 	};
 	ans:=Fnew;
-	output(ans) and skip;
-	output("\n") and skip
+	tmp:=10000000;
+	while(tmp>0)
+	{
+	  tmp:=tmp-1
+	}
 )

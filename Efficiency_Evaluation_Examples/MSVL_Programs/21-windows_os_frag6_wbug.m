@@ -5,36 +5,32 @@
    som(alw(p))
 />
 
-frame(WItemsNum,loop)
+frame(WItemsNum,tmp)
 and
 (
-int WItemsNum and int loop and skip;
-WItemsNum := 3;//__VERIFIER_nondet_int();
+int WItemsNum and int tmp and skip;
 main()
 );
 
-//void callback1() {}
-//void callback2() {}
-//#define MoreWItems() __VERIFIER_nondet_int()
-
 function main() {
-    WItemsNum := -1;//__VERIFIER_nondet_int();
-    if(1) then {
-	    (loop:=0 or loop:=1);
-        while(WItemsNum<=5 AND loop) {
+    WItemsNum := -1;
+	tmp:=10;
+    while(tmp>0){
+        while(WItemsNum<=5) {
                if (WItemsNum<=5) then{
-                  // callback1();
                    WItemsNum:=WItemsNum+1
-    
                } else {
                    WItemsNum:=WItemsNum+1
                }
         };
-    
-        while(WItemsNum>2) {
-            // callback2();
+        while(WItemsNum>0) {
              WItemsNum:=WItemsNum-1
-        }
+        };
+		tmp:=tmp-1
+    };
+	tmp:=10000000;
+    while(tmp>0)
+    {
+	  tmp:=tmp-1
     }
-  //  while(1) {}
 }

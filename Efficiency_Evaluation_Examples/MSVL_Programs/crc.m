@@ -8,13 +8,15 @@ define p: init=0;
 define q: j=256;
 alw(p -> som(q))
 />*/
-frame(lin,rchrIndex1,rchrIndex2,j,init) and
+frame(lin,rchrIndex1,rchrIndex2,init,j,tmp) and
 (
 	unsigned char lin[256] <== "asdffeagewaHAFEFaeDsFEawFdsFaefaeerdjgp" and skip;
 	int rchrIndex1<==0 and skip;
 	int rchrIndex2<==0 and skip;
-	int j<==0 and skip;
 	int init<==0 and skip;
+	int j<==0 and skip;
+	int tmp and skip;
+	
 	function icrc1 (int crc,char onech, int RValue)
 	{
 		int i and skip;
@@ -86,9 +88,6 @@ frame(lin,rchrIndex1,rchrIndex2,j,init) and
 			{
 				tmp1:=lin[j] ^ ((unsigned char)((cword)>>8))
 			};
-			//output("tmp1:") and skip;
-			//output(tmp1) and skip;
-			//output("\n") and skip;
 			cword := icrctb[tmp1] ^ ((unsigned char)(cword & 255)) << 8;
 			j:=j+1
 		};
@@ -114,7 +113,12 @@ frame(lin,rchrIndex1,rchrIndex2,j,init) and
 		i1:=icrc(0,n,0,1);
 		lin[n+1]:=(unsigned char)((i1) >> 8);
 		lin[n+2]:=(unsigned char)((i1) & 255);
-		i2:=icrc(i1,n+2,0,1)
+		i2:=icrc(i1,n+2,0,1);
+		tmp:=10000000;
+		while(tmp>0)
+		{
+		  tmp:=tmp-1
+		}
 	};
 	main_1()
 )

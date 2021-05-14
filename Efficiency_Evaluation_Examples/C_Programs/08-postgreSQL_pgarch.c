@@ -24,52 +24,18 @@ int last_copy_time = 0;
 int curtime;
 int got_SIGHUP;
 int wakend;
+int tmp;
 
 void init() 
 {
   wakend = 1; 
-  got_SIGHUP = __VERIFIER_nondet_int();
-}
-
-void ProcessConfigFile(int a) 
-{
-	
-}
-
-int XLogArchivingActive() 
-{ 
-	return __VERIFIER_nondet_int(); 
-}
-
-void pgarch_ArchiverCopyLoop() 
-{ 
-
-}
-
-int time(int a) 
-{ 
-	return __VERIFIER_nondet_int(); 
-}
-
-void pg_usleep(int a) 
-{
-	
-}
-
-int PostmasterIsAlive(int a) 
-{ 
-	return __VERIFIER_nondet_int(); 
+  got_SIGHUP = 0;
 }
 
 void main() {
 	init();
-	/*
-	 * We run the copy loop immediately upon entry, in case there are
-	 * unarchived files left over from a previous database run (or maybe
-	 * the archiver died unexpectedly).  After that we wait for a signal
-	 * or timeout before doing more.
-	 */
 	wakend = true;
+	tmp=10;
 
 	do
 	{
@@ -77,35 +43,26 @@ void main() {
 		if (got_SIGHUP)
 		{
 			got_SIGHUP = false;
-			ProcessConfigFile(PGC_SIGHUP);
-			if (!XLogArchivingActive())
+			if (0)
 				break;                  /* user wants us to shut down */
 		}
 		/* Do what we're here for */
 		if (wakend)
 		{
 			wakend = false;
-			pgarch_ArchiverCopyLoop();
-			last_copy_time = time(NULL);
+			last_copy_time = 10;
 		}
-		/*
-		 * There shouldn't be anything for the archiver to do except to
-		 * wait for a signal, ... however, the archiver exists to
-		 * protect our data, so she wakes up occasionally to allow
-		 * herself to be proactive. In particular this avoids getting
-		 * stuck if a signal arrives just before we sleep.
-		 */
 		if (!wakend)
 		{
-			pg_usleep(PGARCH_AUTOWAKE_INTERVAL * 1000000L);
-
-			curtime = time(NULL);
+			curtime = 100;
 			if ((unsigned int) (curtime - last_copy_time) >= (unsigned int) PGARCH_AUTOWAKE_INTERVAL)
 			{
 				wakend = true;
 			}
 		}
-	} while (PostmasterIsAlive(true));
+		tmp--;
+	} while (tmp>0);
 
-	while(1) { int ddd; ddd=ddd;}
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

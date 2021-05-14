@@ -1,18 +1,6 @@
 //@ ltl invariant positive: [](AP(j=0) ==> (<>(AP(0<MAXWAVES))));
 
 
-int IsPowerOfTwo ( unsigned x )
-{
-    if ( x < 2 )
-        return FALSE;
-
-    if ( x & (x-1) )
-        return FALSE;
-
-    return TRUE;
-}
-
-
 unsigned NumberOfBitsNeeded ( unsigned PowerOfTwo )
 {
     unsigned i;
@@ -38,21 +26,6 @@ unsigned ReverseBits ( unsigned index, unsigned NumBits )
 
     return rev;
 }
-
-
-double Index_to_frequency ( unsigned NumSamples, unsigned Index )
-{
-    if ( Index >= NumSamples )
-        return 0.0;
-    else if ( Index <= NumSamples/2 )
-        return (double)Index / (double)NumSamples;
-
-    return -(double)(NumSamples-Index) / (double)NumSamples;
-}
-
-
-
-
 
 void fft_float (
     unsigned  NumSamples,
@@ -150,6 +123,7 @@ int MAXSIZE;
 int MAXWAVES;
 int i;
 int j;
+int tmp;
 int main() {
 
 	float *RealIn;
@@ -195,7 +169,7 @@ int main() {
 	 }
  }
 
- //fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
+ fft_float (MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
  
  free(RealIn);
  free(ImagIn);
@@ -203,6 +177,7 @@ int main() {
  free(ImagOut);
  free(coeff);
  free(amp);
-
+ tmp=10000000;
+ while (tmp>0) {tmp=tmp-1;}
 
 }

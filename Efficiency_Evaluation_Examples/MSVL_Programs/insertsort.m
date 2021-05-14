@@ -9,11 +9,16 @@ define p2: a[9]<a[10];
 som(alw(p1 and p2))
 />*/
 
-frame(cnt1,cnt2,i,j,temp,a) and
+frame(cnt1,cnt2,i,j,temp,tmp,a_0,a_1,a_9,a_10,a) and
 (
-	int i,j,temp and skip;
 	int cnt1 and skip;
 	int cnt2 and skip;
+	int i,j,temp and skip;
+	int tmp;
+	int a_0<==0 and skip;
+	int a_1<==0 and skip;
+	int a_9<==0 and skip;
+	int a_10<==0 and skip;
 	int a[11] and skip;
 	a[0]<==0 and skip;
 	a[1]<== 11 and skip; 
@@ -27,6 +32,7 @@ frame(cnt1,cnt2,i,j,temp,a) and
 	a[9]<==3 and skip; 
 	a[10]<==2 and skip;
 	i:=2;
+	
 	while(i<=10)
 	{
 		cnt1:=cnt1+1;
@@ -42,8 +48,13 @@ frame(cnt1,cnt2,i,j,temp,a) and
 		};
 		i:=i+1
 	};
-	output("a[10]:") and skip;
-	output(a[10]) and skip;
-	output("a[9]:") and skip;
-	output(a[9]) and skip
+	a_0:=a[0];
+    a_1:=a[1];
+    a_9:=a[9];
+    a_10:=a[10];
+	tmp:=10000000;
+	while(tmp>0)
+	{
+	  tmp:=tmp-1
+	}
 )

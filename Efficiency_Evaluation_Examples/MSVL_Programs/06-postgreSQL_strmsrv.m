@@ -22,103 +22,56 @@ ListenSocket_OF_listen_index,
 ret,
 sock_path,
 addrs,
-rrr,
-ddd,
 break_1,
 break_2,
-loc_continue
+loc_continue, tmp
 )
 and 
 (
+	int closed and
+	int MaxBackends and
+	int family and
+	int hostName and
+	char *unixSocketName and
+	int MaxListen and
+	int fd and
+	int err and
+	int maxconn and
+	int one and
+	int service and
+	int hint and
+	int listen_index and
+	int added and
+	int addr_ai_family and
+	int addr and
+	int MAXADDR and
+	int ListenSocket_OF_listen_index and
+	int ret and
+	int sock_path and
+	int addrs and
+	int tmp and
+	int break_1 and
+	int break_2 and 
+	int loc_continue and skip;
 
-int closed and
-int MaxBackends and
-int family and
-int hostName<==0 and
-//unsigned short portNumber 
-//and
-char *unixSocketName 
-and
-int MaxListen<==5 
-and
-int fd 
-and
-int err 
-and
-int maxconn 
-and
-int one 
-and
-//int ret 
-//and
-int service 
-and
-int hint 
-and
-int listen_index 
-and
-int added 
-and
-int addr_ai_family<==1 
-and
-int addr 
-and
-int MAXADDR 
-and
-int ListenSocket_OF_listen_index 
-and
-int ret 
-and
-int sock_path<==0 
-and
-int addrs 
-and
-int rrr 
-and 
-int ddd 
-and
-int break_1<==0 
-and
-int break_2<==0 
-and 
-int loc_continue<==0 
-and
+	one := 1;
+	listen_index := 0; 
+	added := 0; 
+	MAXADDR :=5; 
+	addrs := 0;
+	MaxBackends :=6; 
+	ret := 0; 
 
-one <== 1 
-and
-listen_index <== 0 
-and
-added <== 0 
-and
-MAXADDR <==5// __VERIFIER_nondet_int() 
-and
-addrs <== 0//__VERIFIER_nondet_int() 
-and
-MaxBackends <==6 //__VERIFIER_nondet_int() 
-and
-ret <== 0 
-and
-skip;
-
-((family<==3 and skip) or (family<==2 and skip));
-
-if(addrs>=0 AND MaxBackends>0)then
-{	
-   //__VERIFIER_assume(addrs>=0);
-	//__VERIFIER_assume(MaxBackends>0);
-
-	if (family = 3)
-	then
+	if (family = 3) then
 	{
-		service <== sock_path and skip
+		service := sock_path
 	}
 	else
 	{
-		skip;
-		service <== 1 and skip
+		service := 1
 	};
 
-	ret <==1 and skip;
+	ret :=1;
 	if (ret OR !addrs)then
 	{
 		if (hostName)then
@@ -130,10 +83,13 @@ if(addrs>=0 AND MaxBackends>0)then
 		  skip
 		}
 	};
-	addr <== addrs and skip;
-	if( addr < MAXADDR AND !break_1)then
+	addr := addrs;
+	while(addr < MAXADDR AND !break_1)
 	{
-		(loc_continue:=1 or loc_continue:=0);
+		if(0) then
+		{
+			loc_continue:=1
+		};
 				
 		if(!loc_continue)then
 		{
@@ -177,25 +133,20 @@ if(addrs>=0 AND MaxBackends>0)then
 		            }
 		        };
 
-				(fd:=-1 or fd:=0 or fd:=1);
+				fd:=1;
 		        if (fd)then
 		        {
 			       loc_continue:=1
 		        }
 				else
 				{				
-
-				   (loc_continue:=1 or loc_continue:=0);
 		           if(!loc_continue)then
 				   {
-				         (skip or
-				         (closed:=1;
-			         	 loc_continue:=1));
+				         closed:=1;
+			         	 loc_continue:=1;
 						 if(!loc_continue)then
 						 {
-		           
-		                      (err := 0 
-							  or err:=-1);
+		                      err:=-1;
 	                          if (err < 0)then
 	          	              {
 		        	             closed:=1;
@@ -203,24 +154,21 @@ if(addrs>=0 AND MaxBackends>0)then
 	                          };
 							  if(!loc_continue)then
 							  {
-
 		                          if (addr_ai_family = 3)then
 		                          {
-			                         (skip or
-									 (
-				                       closed:=1;
-				                       break_1:=1
-			                          ))
+									if(0!=1) then
+									{
+										closed:=1;
+										break_1:=1
+									}
 		                          };
 								  if(!break_1)then
 								  {
-		
 	                              	 maxconn := MaxBackends * 2;
 		                             if (maxconn > 10)then
 									 {
 			                            maxconn := 10;
-
-		                                (err := 0 or err:=-1);
+		                                err:=-1;
 		                                if (err < 0)then
 	                                   	{
 			                               closed:=1;
@@ -228,7 +176,6 @@ if(addrs>=0 AND MaxBackends>0)then
 		                                };
 										if(!loc_continue)then
 										{
-		
 		                                 ListenSocket_OF_listen_index := fd;
 		                                 added:=added+1
 		                                }
@@ -250,13 +197,22 @@ if(addrs>=0 AND MaxBackends>0)then
 
 	if (!added)then
 	{
-		ret := 0
+		ret := 0;
+		tmp:=10000000;
+		while(tmp>0) then
+		{
+			tmp:=tmp-1
+		}
 	}
 	else
 	{	
-    	ret := 1
+    	ret := 1;
+		tmp:=10000000;
+		while(tmp>0)
+		{
+			tmp:=tmp-1
+		}
 	}
 	
-}
 
 )

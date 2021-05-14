@@ -7,15 +7,20 @@
   define p: x=1;
   som(alw(p))
 />
-frame(x,y) and
+frame(x,tmp) and
 ( 
-	int x<==1 and int y<==0 and skip; 
-	if(!y) then
+	int x<==1 and skip;
+	int tmp<==10 and skip; 
+	while(tmp>0) then
 	{
-		y:=1 or y:=0
+		tmp:=tmp-1
 	};
-
 	x:=0;
-	x:=1
+	x:=1;
+	tmp:=10000000;
+	while(tmp>0)
+	{
+		tmp:=tmp-1
+	}
 )
 

@@ -9,7 +9,7 @@ define q: j=MAXWAVES;
 alw(p->som(q))
 />
 
-frame(MAXSIZE,MAXWAVES,i,j,RealIn,ImagIn,RealOut,ImagOut,coeff,amp,invfft) and
+frame(MAXSIZE,MAXWAVES,i,j,RealIn,ImagIn,RealOut,ImagOut,coeff,amp,invfft,tmp) and
 (
  function NumberOfBitsNeeded (unsigned int PowerOfTwo,unsigned int RValue)
  {
@@ -74,10 +74,10 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 		while(BlockSize <= NumSamples)
 		{
 			float delta_angle <== angle_numerator / (float)BlockSize and skip;
-			float sm2 <== sin ( -2 * delta_angle ) and skip;
-			float sm1 <== sin ( -delta_angle ) and skip;
-			float cm2 <== cos ( -2 * delta_angle ) and skip;
-			float cm1 <== cos ( -delta_angle ) and skip;
+			float sm2 <== 0.3 and skip;
+			float sm1 <== 0.4 and skip;
+			float cm2 <== 0.5 and skip;
+			float cm1 <== 0.2 and skip;
 			float w <== 2 * cm1 and skip;
 			float ar[3], ai[3] and skip;
 			float temp and skip;
@@ -136,6 +136,7 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 	unsigned int MAXSIZE and skip;
 	unsigned int MAXWAVES and skip;
 	unsigned int i,j and skip;
+	int tmp and skip;
 
 	float *RealIn and skip;
 	float *ImagIn and skip;
@@ -146,7 +147,6 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 	int invfft<==0 and skip;
 	MAXSIZE<==4096 and skip;
 	MAXWAVES<==4 and skip;
-	srand(1) and skip;
 	RealIn<==(float*)malloc(sizeof(float)*MAXSIZE) and skip;
 	ImagIn<==(float*)malloc(sizeof(float)*MAXSIZE) and skip;
 	RealOut<==(float*)malloc(sizeof(float)*MAXSIZE) and skip;
@@ -156,8 +156,8 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 	i<==0 and skip;
 	while(i<MAXWAVES)
 	{
-		coeff[i] := rand()%1000;
-		amp[i] := rand()%1000;
+		coeff[i] := 235%1000;
+		amp[i] := 652%1000;
 		i:=i+1
 	};
 	i<==0 and skip;
@@ -167,13 +167,13 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 		j<==0 and skip;
 		while(j<MAXWAVES)
 		{
-			if(rand()%2) then
+			if(1) then
 			{
-				RealIn[i]:=RealIn[i]+coeff[j]*cos(amp[j]*i)
+				RealIn[i]:=RealIn[i]+coeff[j]*0.3
 			}
 			else
 			{
-				RealIn[i]:=RealIn[i]+coeff[j]*sin(amp[j]*i)
+				RealIn[i]:=RealIn[i]+coeff[j]*0.5
 			};
 			ImagIn[i]:=0;
 			j:=j+1
@@ -181,30 +181,16 @@ function ReverseBits (unsigned int index, unsigned int NumBits, unsigned int RVa
 		i:=i+1
 	};
 	fft_float(MAXSIZE,invfft,RealIn,ImagIn,RealOut,ImagOut);
-	/*output("RealOut:\n") and skip;
-	i<==0 and skip;
-	while(i<MAXSIZE)
-	{
-		output(RealOut[i]) and skip;
-		output(" \t") and skip;
-		i:=i+1
-	};
-	output("\n") and skip;
-	
-	output("ImagOut:\n") and skip;
-	i<==0 and skip;
-	while(i<MAXSIZE)
-	{
-		output(ImagOut[i]) and skip;
-		output(" \t") and skip;
-		i:=i+1
-	};
-	output("\n") and skip;*/
 	
 	free(RealIn) and skip;
 	free(ImagIn) and skip;
 	free(RealOut) and skip;
 	free(ImagOut) and skip;
 	free(coeff) and skip;
-	free(amp) and skip
+	free(amp) and skip;
+	tmp:=10000000;
+	while(tmp>0)
+	{
+	  tmp:=tmp-1
+	}
 )

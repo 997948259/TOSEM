@@ -26,13 +26,11 @@ extern int __VERIFIER_nondet_int();
 
 int family;
 char *hostName;
-unsigned short portNumber;
 char *unixSocketName;
 int MaxListen;
 int fd, err;
 int maxconn;
 int one;
-int ret;
 char *service;
 int hint;
 int listen_index;
@@ -50,7 +48,6 @@ int firstDelBlock;
 int A; int RELEASE;
 char *bufHdr;
 int bufHdr_tag_blockNum;
-int bufHdr_tag_blockNum;
 int bufHdr_tag_rnode;
 int bufHdr_tag_rnode_spcNode;
 int bufHdr_tag_rnode_dbNode;
@@ -64,78 +61,52 @@ int NLocBuffer;
 int i;
 int NBuffers;
 int bufHdr_refcount;
+int tmp;
 
-void StrategyInvalidateBuffer(int bufHdr) {}
-void WaitIO(int a) {}
-int RelFileNodeEquals(int a, int b) 
-{ 
-	return __VERIFIER_nondet_int(); 
-}
-
-istemp = __VERIFIER_nondet_int();
+istemp = 0;
 A = 0;
 RELEASE = 0;
-NLocBuffer = __VERIFIER_nondet_int();
-NBuffers = __VERIFIER_nondet_int();
+NLocBuffer = 5;
+NBuffers = 5;
 
 void main() {
-	//DD: If NBuffers is not larger than 1, the property is trivially not satisfied. So I added the following line:
-	//__VERIFIER_assume(NBuffers>1);
-	//end
 	if (istemp==1)
 	{
 		for (i = 0; i < NLocBuffer; i++)
 		{
 			bufHdr = &LocalBufferDescriptors_i;
-			if (RelFileNodeEquals(bufHdr_tag_rnode, rnode) && bufHdr_tag_blockNum >= firstDelBlock)
+			if ( bufHdr_tag_blockNum >= firstDelBlock)
 			{
 				if (LocalRefCount_i != 0) ;
-
-				//DD: replaced the line
-				//bufHdr_flags &= ~(BM_DIRTY | BM_JUST_DIRTIED);
-				//with this
 				bufHdr_flags = 0;
-				//because x = 0 & ... is always 0 				
-				//end
 				bufHdr_cntxDirty = 0;
-				bufHdr_tag_rnode_relNode = 1; // InvalidOid;
+				bufHdr_tag_rnode_relNode = 1;
 			}
 		}
 		goto my_exit;
 	}
 
-	A = 1; A = 0; // LWLockAcquire(BufMgrLock, LW_EXCLUSIVE);
+	A = 1; A = 0;
 
 	for (i = 1; i <= NBuffers; i++)
 	{
-		bufHdr = __VERIFIER_nondet_int(); // &BufferDescriptors[i - 1];
+		bufHdr = 0; 
 recheck:
-		if (RelFileNodeEquals(bufHdr_tag_rnode, rnode) && bufHdr_tag_blockNum >= firstDelBlock)
+		if ( bufHdr_tag_blockNum >= firstDelBlock)
 		{
-			//DD: replaced the line
-			//if (bufHdr_flags & BM_IO_IN_PROGRESS)
-			//with this
 			if (bufHdr_flags)
 			{
-				WaitIO(bufHdr);
 				goto recheck;
 			}
 
 			if (bufHdr_refcount != 0);
-
-			//DD: replaced the line
-			//bufHdr_flags &= ~(BM_DIRTY | BM_JUST_DIRTIED);
-			//with this
 			bufHdr_flags = 0;
-			//because x = 0 & ... is always 0 
-			//end
 			bufHdr_cntxDirty = 0;
-
-			StrategyInvalidateBuffer(bufHdr);
 		}
 	}
 
-	RELEASE = 1; RELEASE = 0; //LWLockRelease(BufMgrLock);
+	RELEASE = 1; RELEASE = 0; 
 my_exit:
-	while(1) { int yyy;yyy=yyy;}
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

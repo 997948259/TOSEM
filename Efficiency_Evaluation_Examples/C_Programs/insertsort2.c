@@ -3,6 +3,7 @@
 int cnt1, cnt2;
 
  int  i,j, temp;
+ int tmp;
    int a_0=0;
   int a_1=0;
   int a_9=0;
@@ -36,7 +37,6 @@ int main()
 	j--;
       }
 
-	printf("Inner Loop Counts: %d\n", cnt2);
 
       i++;
     }
@@ -44,10 +44,8 @@ int main()
     a_1=a[1];
     a_9=a[9];
     a_10=a[10];
-
-    printf("Outer Loop : %d ,  Inner Loop : %d\n", cnt1, cnt2);
+	tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
     return 0;
 
 }
-
-	

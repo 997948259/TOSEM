@@ -18,6 +18,7 @@ int WarmPollPeriod;
 int status;
 int polling;
 int PowerStateIsAC;
+int tmp;
 #define NT_SUCCESS(s) s>0
 #define STATUS_SUCCESS 1
 #define STATUS_UNSUCCESSFUL 0
@@ -31,30 +32,15 @@ int PowerStateIsAC;
 #define NULL 0
 #define FALSE 0
 #define TRUE 1
-void ExAcquireFastMutex() {}
-void ExReleaseFastMutex() {}
-#define GetStatus __VERIFIER_nondet_int
-#define IoInvalidateDeviceRelations __VERIFIER_nondet_int
-#define KeWaitForSingleObject __VERIFIER_nondet_int
-#define P4ReadRawIeee1284DeviceId __VERIFIER_nondet_int
-#define HTPnpFindDeviceIdKeys __VERIFIER_nondet_int
-#define HtFreePort __VERIFIER_nondet_int
-#define HtRegGetDword __VERIFIER_nondet_int
-#define HtTryAllocatePort __VERIFIER_nondet_int
-#define SetFlags __VERIFIER_nondet_int
-
-WarmPollPeriod = __VERIFIER_nondet_int();
-status = __VERIFIER_nondet_int();
-polling = __VERIFIER_nondet_int();
-PowerStateIsAC = __VERIFIER_nondet_int();
+WarmPollPeriod = 0;
+status = 2;
+polling = 0;
+PowerStateIsAC = 1;
 
 
 int main() {
    if( NT_SUCCESS( status ) ) {
-       ExAcquireFastMutex();
-       SetFlags();
-       ExReleaseFastMutex();
-       WarmPollPeriod = HtRegGetDword();
+       WarmPollPeriod = 3;
        if( WarmPollPeriod < 5 ) {
            WarmPollPeriod = 5;
        } else {
@@ -63,62 +49,56 @@ int main() {
            }
        }
        {
-           if (__VERIFIER_nondet_int()) {
-               // We've got it.  Now get a pointer to it.
+           if (1) {
                polling = 1;
-               if(__VERIFIER_nondet_int()) {
+               if(1) {
 //---------------------------------------------
-               {
                    LARGE_INTEGER   timeOut1;
                    NTSTATUS        status;
                    UCHAR           deviceStatus;
                    PCHAR           devId;
                    BOOLEAN         requestRescan;
                    const ULONG     pollingFailureThreshold = 10; //pick an arbitrary but reasonable number
-                   do {
+                   tmp=10;
+				   do {
                        if( PowerStateIsAC ) {
                        } else {
                        }
-                       status = KeWaitForSingleObject();
-                       if( __VERIFIER_nondet_int() ) {
+                       if( 0 ) {
                            break;
                        }
                        if( !PowerStateIsAC ) {
                            goto loc_continue;
                        }
                        if( STATUS_TIMEOUT == status ) {
-						   if(__VERIFIER_nondet_int()) 
+						   if(1) 
 							   polling = 0;
-						   
-                           if( __VERIFIER_nondet_int() ) {
-                               // try to acquire port
-                               if( HtTryAllocatePort() ) {
+                           if( 1 ) {
+                               if( 1 ) {
                                    requestRescan = FALSE;
                                    // check for something connected
-                                   deviceStatus = GetStatus();
-                                   if( __VERIFIER_nondet_int()) {
+                                   deviceStatus = 0;
+                                   if(0) {
                                    } else {
                                        // we might have something connected
                                        // try a device ID to confirm
-                                       devId = P4ReadRawIeee1284DeviceId();
+                                       devId = 1;
                                        if( devId ) {
                                            PCHAR  mfg, mdl, cls, des, aid, cid;
                                            // RawIeee1284 string includes 2 bytes of length data at beginning
-                                           HTPnpFindDeviceIdKeys();
-                                           if( mfg && mdl ) {
+                                           if( mfg=1 && mdl=1 ) {
                                                requestRescan = TRUE;
                                            }
                                        } else {
                                        }
                                        if( requestRescan ) {
                                        } else {
-                                           if(__VERIFIER_nondet_int() ) {
+                                           if(1) {
                                            }
                                        }
                                    }
-                                   HtFreePort( );
                                    if( requestRescan ) {
-                                       IoInvalidateDeviceRelations();
+                                       
                                    }
                                } else {
                                }
@@ -126,21 +106,19 @@ int main() {
                            }
                        }
 		   loc_continue: { int ddd; ddd = ddd; }
-                   } while( TRUE );
-               }
+                   tmp--;
+				   } while( tmp>0 );
+               
 //---------------------------------------------
                    polling = 0;
                } else {
                    polling = 0;
-                   // error
                }
            } else {
            }
        }
    }
-   // Failsafe
-   polling = 1;
-   while (1) {
-       HTPnpFindDeviceIdKeys();
-   }
+   polling = 0;
+  tmp=10000000;
+	while (tmp>0) {tmp=tmp-1;}
 }

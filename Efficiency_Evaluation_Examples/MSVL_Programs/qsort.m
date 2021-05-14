@@ -1,5 +1,5 @@
 /*</
-define p: count <= 60;
+define p: count <= 5;
 alw(p)
 />*/
 
@@ -8,7 +8,7 @@ define p: array[0].qstring[0] >= array[1].qstring[0];
 som(alw(p))
 />
 
-frame(array,fp,i,count) and 
+frame(array,i,count,tmp) and 
 (
 	struct myStringStruct {
 	char qstring[128]
@@ -18,8 +18,6 @@ frame(array,fp,i,count) and
 		int result<==1 and skip;
 		myStringStruct * e1 <== elem1 and skip;
 		myStringStruct * e2 <== elem2 and skip;
-		//output(e1->qstring) and skip;
-		//output(e2->qstring) and skip;
 
 		result := strcmp(e1->qstring, e2->qstring);
 		if(result < 0)then
@@ -39,23 +37,31 @@ frame(array,fp,i,count) and
 		}		
 	};
 	myStringStruct array[60] and skip;
-	FILE *fp and skip;
 	int i and skip;
-	int count<==0 and skip;
-	fp<== fopen("F:\\input_small.dat","r") and skip;
-	while( (fscanf(fp, "%s", &array[count].qstring) = 1) AND (count < 60)) {
-	 count:=count+1
-    };
+	int count<==5 and skip;
+	int tmp and skip;
+	
+	strcpy(array[0].qstring, "1") and skip;
+	strcpy(array[1].qstring, "2") and skip;
+	strcpy(array[2].qstring, "3") and skip;
+	strcpy(array[3].qstring, "4") and skip;
+	strcpy(array[4].qstring, "5") and skip;
+	
 	output("\nSorting ") and skip;
 	output(count) and skip;
 	output(" elements.\n\n") and skip;
 
-	qsort(array,count,128,compare) and skip;
+	qsort(array,5,128,compare) and skip;
 	i<==0 and skip;
 	while(i<count)
 	{
 		output(array[i].qstring) and skip;
 		output("\n") and skip;
 		i:=i+1
+	};
+	tmp:=10000000;
+	while(tmp>0)
+	{
+	  tmp:=tmp-1
 	}
 )

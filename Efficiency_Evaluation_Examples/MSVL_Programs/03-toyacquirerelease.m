@@ -7,22 +7,26 @@
  alw(p->som(q))
 />
 
-frame(a,r,n,x,tmp) and
+frame(a,r,n,tmp) and
 (
-  int a<==0 and int x<==0 and 
-  int r<==0 and int tmp<==1 and
-  int n and skip;  
-  if(tmp) then 
+  int a<==0 and int r<==0 and int n and int tmp and skip;  
+  tmp:=10;
+  while(tmp>0) 
   {
-    a <== 1 and skip;
-    a <== 0 and skip;
-    n <== 0 and skip;
+    a := 1;
+    a := 0;
+    n := 1;
     while(n>0) 
 	{
       n:=n-1
     };
-    r <== 1 and skip;
-    r <== 0 and skip;
-	(tmp:=1 or tmp:=0)
+    r := 1;
+    r := 0;
+	tmp:=tmp-1
+  };
+  tmp:=10000000;
+  while(tmp>0) 
+  {
+	tmp:=tmp-1
   }
 )

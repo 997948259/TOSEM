@@ -29,21 +29,17 @@ NLocBuffer,
 i,
 NBuffers,
 bufHdr_refcount,
-BM_DIRTY,
-BM_JUST_DIRTIED,
-BM_IO_IN_PROGRESS
+tmp
 )
 and
 (
 int family and
 char *hostName and
-//unsigned short portNumber and
 char *unixSocketName and
 int MaxListen and
 int fd, err and
 int maxconn and
 int one and
-//int ret and
 char *service and
 int hint and
 int listen_index and
@@ -59,75 +55,50 @@ int rnode and
 int istemp and
 int firstDelBlock and
 int A and int RELEASE and
-///char *bufHdr and
 int *bufHdr and
 int bufHdr_tag_blockNum and
-//int bufHdr_tag_blockNum and
 int bufHdr_tag_rnode and
 int bufHdr_tag_rnode_spcNode and
 int bufHdr_tag_rnode_dbNode and
 int bufHdr_tag_rnode_relNode and
 int bufHdr_flags and
 int bufHdr_cntxDirty and
-//int bufHdr_tag_rnode_relNode and
 int LocalRefCount_i and
 int LocalBufferDescriptors_i and
 int NLocBuffer and
 int i and
 int NBuffers and
 int bufHdr_refcount and
-int BM_DIRTY<==1 and 
-int BM_JUST_DIRTIED<==2 and 
-int BM_IO_IN_PROGRESS<==3 and
-skip;
+int tmp and skip;
 
-//void StrategyInvalidateBuffer(int bufHdr) {}
-//void WaitIO(int a) {}
-/*int RelFileNodeEquals(int a, int b) 
-{ 
-	return __VERIFIER_nondet_int(); 
-}*/
-
-istemp <== 0//__VERIFIER_nondet_int() 
-and
-A <== 0 and
-RELEASE <== 0 and
-NLocBuffer <== 5//__VERIFIER_nondet_int()
-and
-NBuffers <== 5//__VERIFIER_nondet_int() 
-and skip;
+istemp := 0; 
+A := 0;
+RELEASE := 0;
+NLocBuffer := 5;
+NBuffers := 5;
 main_1()
 );
 function main_1() {
-frame(yyy, cond,my_exit,recheck)
+frame(cond,my_exit,recheck)
 and(
-int yyy and 
 int cond and 
 int my_exit<==0 and 
 int recheck<==1 and skip;
-	//DD: If NBuffers is not larger than 1, the property is trivially not satisfied. So I added the following line:
-	//__VERIFIER_assume(NBuffers>1);
-	//end
 	if (istemp=1)then
 	{
 	    i:=0;
 		while(i < NLocBuffer)
 		{
 			bufHdr := &LocalBufferDescriptors_i;
-			//if (RelFileNodeEquals(bufHdr_tag_rnode, rnode) && bufHdr_tag_blockNum >= firstDelBlock)
-			(cond:=1 or cond:=0);
-			if(cond)then
+			if (bufHdr_tag_blockNum >= firstDelBlock) then
 			{
-				//if (LocalRefCount_i != 0) ;
-
-				//DD: replaced the line
-				//bufHdr_flags &= ~(BM_DIRTY | BM_JUST_DIRTIED);
-				//with this
+				if (LocalRefCount_i != 0) then
+				{
+					skip
+				};
 				bufHdr_flags := 0;
-				//because x = 0 & ... is always 0 				
-				//end
 				bufHdr_cntxDirty := 0;
-				bufHdr_tag_rnode_relNode := 1 // InvalidOid;
+				bufHdr_tag_rnode_relNode := 1
 			};
 			i:=i+1
 		};
@@ -136,53 +107,42 @@ int recheck<==1 and skip;
 	
 	if(!my_exit)then
 	{
-
 	  A := 1; 
-	  A := 0; // LWLockAcquire(BufMgrLock, LW_EXCLUSIVE);
-
+	  A := 0;
 	  i:=1;
-	  while( i <= NBuffers)
+	  while(i <= NBuffers)
 	  {
-		bufHdr :=0;// __VERIFIER_nondet_int(); // &BufferDescriptors[i - 1];
-		
+		bufHdr :=0;
         while(recheck)
 		{
 		   recheck:=0;
-		   //if (RelFileNodeEquals(bufHdr_tag_rnode, rnode) && bufHdr_tag_blockNum >= firstDelBlock)
-		   (cond:=0 or cond:=1);
-		   if(cond)then
+		   if (bufHdr_tag_blockNum >= firstDelBlock) then
 		   {
-		       //DD: replaced the line
-			   //if (bufHdr_flags & BM_IO_IN_PROGRESS)
-			   //with this
 			   if (bufHdr_flags)then
 			   {
-				//WaitIO(bufHdr);
 				 recheck:=1
 			   };
 
 			   if(!recheck)then
 			   {
-			       //if (bufHdr_refcount != 0);
-
-			       //DD: replaced the line
-			       //bufHdr_flags &= ~(BM_DIRTY | BM_JUST_DIRTIED);
-			       //with this
+			       if (bufHdr_refcount != 0) then
+				   {
+					 skip
+				   };
 			        bufHdr_flags := 0;
-			       //because x = 0 & ... is always 0 
-			        //end
-			        bufHdr_cntxDirty := 0
-
-			       //StrategyInvalidateBuffer(bufHdr);			   
+			        bufHdr_cntxDirty := 0	   
 			   }
 		   }
 		};
-		
 		i:=i+1
 	   };
 
-	   RELEASE := 1; RELEASE := 0 //LWLockRelease(BufMgrLock);
-	 }
-	
+	   RELEASE := 1; RELEASE := 0
+	 };
+	tmp:=10000000;
+    while(tmp>0)
+    {
+	  tmp:=tmp-1
+    }
 )
 }

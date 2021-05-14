@@ -20,23 +20,23 @@ int resp;
 int curr_serv;
 
 
-c = __VERIFIER_nondet_int(); 
+c = 6; 
 servers = 4;
 resp = 0;
 curr_serv = servers;
 
 
 int main() {
-__VERIFIER_assume(c>0);
+	int tmp;
   while(curr_serv > 0) {
-    if(__VERIFIER_nondet_int()) {
+    if(1) {
       c--; curr_serv--;
       resp++;
     } else {
-      __VERIFIER_assume(c < curr_serv);
       curr_serv--;
     }
   }
-  while(1) { int ddd; ddd=ddd; }
+  tmp=10000000;
+  while (tmp>0) {tmp=tmp-1;}
 }
 
