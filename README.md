@@ -74,6 +74,7 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 (5) Run the project and the following result can be obtained. 
 
-![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118351974-7a334d80-b591-11eb-99bf-33f0ee0cb9e5.png)
+![Uploading 360截图17100813153429.png…]()
+
 
 The left picture shows the result produced by machine M0, including the final verification result and the verification time, while the right picture shows the result produced by machines M1-Mn, including some socket communiction information and intermediate results.
