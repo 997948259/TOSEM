@@ -58,6 +58,7 @@ It is not neccssary to build it. Instead, it can be executed directly.
 (2) Build the project after the "DNRV-MMRV.7z" is decompressed;
 
 (3) The configuration information is written in the file /MSV/Info.txt.
+
 ** In the first line, 0 means MMRV, 1 means DNRV. 
 If DNRV is selected, the following lines should also be considered.
 *  The second line should be written as 0. 
