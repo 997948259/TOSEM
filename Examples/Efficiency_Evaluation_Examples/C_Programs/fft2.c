@@ -1,4 +1,4 @@
-//@ ltl invariant positive: [](AP(j=0) ==> (<>(AP(0<MAXWAVES))));
+//@ ltl invariant positive: [](AP(j=0) ==> (<>(AP(0>MAXWAVES))));
 
 
 unsigned NumberOfBitsNeeded ( unsigned PowerOfTwo )

@@ -4,8 +4,8 @@ define q: j>=0;
 alw(p and q)
 />
 /*</
-define p1: a[0]<a[1];
-define p2: a[9]<a[10];
+define p1: a_0<a_1;
+define p2: a_9<a_10;
 som(alw(p1 and p2))
 />*/
 

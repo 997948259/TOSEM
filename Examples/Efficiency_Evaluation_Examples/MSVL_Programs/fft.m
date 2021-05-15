@@ -1,11 +1,11 @@
 /*</
-define p: i<=MAXSIZE;
-define q: j<=MAXWAVES;
+define p: 0<=MAXSIZE;
+define q: 0<=MAXWAVES;
 alw(p and q)
 />*/
 </
 define p: j=0;
-define q: j=MAXWAVES;
+define q: 0>MAXWAVES;
 alw(p->som(q))
 />
 

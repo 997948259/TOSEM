@@ -1,4 +1,4 @@
-//@ ltl invariant positive: [](AP(temp=Fnew)==><>AP(Fold=temp));
+//@ ltl invariant positive: [](AP(temp=Fnew)==><>AP(Fold!=temp));
 
 int  i, Fnew, Fold, temp,ans, n;
 int tmp;

@@ -1,6 +1,40 @@
-﻿生成启动时间为 2019/6/12 11:37:03。
-     1>项目“D:\验证项目\横向测试比较\服务器使用版本\有穷程序的验证\server多用户单用户均可\test.vcxproj”在节点 2 上(Build 个目标)。
-     1>Link:
+﻿生成启动时间为 2021/5/15 16:29:44。
+     1>项目“D:\GitHub\TOSEM\tools\distributedMachines\test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ot /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release\\" /Fd".\Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(304): warning C4805: “==”: 在操作中将类型“int”与类型“bool”混合不安全
+     1>main.cpp(920): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(923): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(926): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(933): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(944): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(950): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(990): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1274): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1277): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1280): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1287): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1298): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(1304): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(937) : 参见“itoa”的声明
+     1>main.cpp(666): warning C4101: “ClientAddr”: 未引用的局部变量
+     1>main.cpp(1004): warning C4101: “ClientAddr”: 未引用的局部变量
+     1>d:\github\tosem\tools\distributedmachines\main.cpp(220): warning C4715: “__Sat”: 不是所有的控件路径都返回值
+     1>d:\github\tosem\tools\distributedmachines\main.cpp(470): warning C4715: “EachSeg”: 不是所有的控件路径都返回值
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\test.exe" /INCREMENTAL:NO /NOLOGO odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\Release\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release\test.lib" /MACHINE:X86 /SAFESEH .\Release\ConsLNFG.obj
          .\Release\function.obj
          .\Release\lex.obj
@@ -9,9 +43,9 @@
          .\Release\parse.obj
          .\Release\tpool.obj
          .\Release\TreeNode.obj
-         test.vcxproj -> D:\验证项目\横向测试比较\服务器使用版本\有穷程序的验证\server多用户单用户均可\.\Release\test.exe
-     1>已完成生成项目“D:\验证项目\横向测试比较\服务器使用版本\有穷程序的验证\server多用户单用户均可\test.vcxproj”(Build 个目标)的操作。
+         test.vcxproj -> D:\GitHub\TOSEM\tools\distributedMachines\.\Release\test.exe
+     1>已完成生成项目“D:\GitHub\TOSEM\tools\distributedMachines\test.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:11.43
+已用时间 00:00:02.15

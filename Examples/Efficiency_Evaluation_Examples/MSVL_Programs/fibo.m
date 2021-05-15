@@ -4,7 +4,7 @@ alw(p)
 />*/
 </
 define p: temp=Fnew;
-define q: Fold=temp;
+define q: Fold!=temp;
 alw(p->som(q))
 />
 frame(i,Fnew,Fold,temp,ans,n,tmp) and
