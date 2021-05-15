@@ -47,7 +47,7 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 (2) Build the project in the folder "distributedMachines".
 
-(3) Run the project, then it will be listening the port to receive socket information, as the following picture.
+(3) Run the project, then it will be listening the port to receive socket information, as the following picture. The first line, 0, means that this is a release version (While 1 means this is a debug version). The second line, 8003, is the port number used to socket communication between M0 and M1-Mn.
 
 ![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118350542-e9a53f00-b589-11eb-8ca4-92fdd06dde4a.png)
 
@@ -68,10 +68,12 @@ It is not neccssary to build it. Instead, it can be executed directly.
 * The fifth line means the number of states in each segment, which is 500000 in our paper.
 * From the sixth line, the IP addresses of distributed machines should be written.
 
-(4) The monitored MSVL program and the desired property are written in the file "\_MSVInput.m". In more detail, the desired property is in front of the monitored MSVL program, as the following picture, which is the example CTCS-3. Each example contains four kinds of properties, including the liveness, safety, weak fairness and periodically repeated properties. Each property is written in the format </ ... />. Since each time, only one property can be verified, the other three properties are commented our by /* ... */.
+(4) The monitored MSVL program and the desired property are written in the file "\_MSVInput.m". In more detail, the desired property is in front of the monitored MSVL program. The following picture shows the example CTCS-3. Each example contains four kinds of properties, including the liveness, safety, weak fairness and periodically repeated properties. Each property is written in the format </ ... />. Since each time, only one property can be verified, the other three properties are commented our by /* ... */.
 
 ![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118352204-ad2a1100-b592-11eb-90be-569dec82fb38.png)
 
 (5) Run the project and the following result can be obtained. 
 
 ![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118351974-7a334d80-b591-11eb-99bf-33f0ee0cb9e5.png)
+
+The left picture shows the result produced by machine M0, including the final verification result and the verification time, while the right picture shows the result produced by machines M1-Mn, including some socket communiction information and intermediate results.
