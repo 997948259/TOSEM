@@ -29,7 +29,7 @@ It contains the necessary environment and modules to accomplish our tool PPTLChe
 
 # Building and running the project
 
-The project is built and run in the Windows platform. For the compressed files, it is needed to unzip them at first.
+The project is built and run in the Windows platform. For the compressed files, it is needed to decompress them at first.
 
 ## The tool C2M
 
@@ -51,6 +51,7 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 ![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118350542-e9a53f00-b589-11eb-8ca4-92fdd06dde4a.png)
 
+## The sub-tool in machine M0
 
-
-(3) Copy the file folder LLVM to C:\ in machine M0
+(1) Copy the file folder LLVM to C:\ in machine M0
+(2) Build the project after the "DNRV-MMRV.7z" is decompressed.
