@@ -32,11 +32,15 @@ It contains the necessary environment and modules to accomplish our tool PPTLChe
 ## The tool C2M
 
 (1) For Windows, open command prompt and enter the file folder where C2M.exe is located;
+
 (2) Type C2M.exe D:\inputfile.c, where D:\inputfile.c is the file path of the input file inputfile.c;
+
 (3) The translated MSVL program result.txt is generated at the folder which contains C2M.exe.
 
 ## The sub-tool in distributed machines M1-Mn
 
 (1) Install the microsoft vs 2013;
+
 (2) Build the project in the folder "distributedMachines".
-(2) Copy the file folder LLVM to C:\ in machine M0
+
+(3) Copy the file folder LLVM to C:\ in machine M0
