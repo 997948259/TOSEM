@@ -1,1 +1,0 @@
-/****<1:0ms>****/INSERT OR IGNORE INTO testcase(sql,tm)VALUES(?1,?2)
