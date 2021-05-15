@@ -33,7 +33,7 @@ The project is built and run in the Windows platform. For the compressed files, 
 
 ## The tool C2M
 
-It is not neccssary to huild it. Instead, it can be executed directly.
+It is not neccssary to build it. Instead, it can be executed directly.
 
 (1) Open command prompt and enter the file folder where C2M.exe is located;
 
@@ -46,5 +46,10 @@ It is not neccssary to huild it. Instead, it can be executed directly.
 (1) Install the microsoft vs 2013;
 
 (2) Build the project in the folder "distributedMachines".
+
+(3) Run the project, then it will be listening the port to receive socket information, as the following picture.
+
+![Uploading 360截图17100813153429.png…]()
+
 
 (3) Copy the file folder LLVM to C:\ in machine M0
