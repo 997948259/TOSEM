@@ -57,12 +57,13 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 (2) Build the project after the "DNRV-MMRV.7z" is decompressed;
 
-(3) The configuration information is written in the file /MSV/Info.txt.
+(3) The configuration information is written in the file /MSV/Info.txt. An example is shown as follows.
+![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118351560-52db8100-b58f-11eb-8776-2a46d3cc8587.png)
 
-** In the first line, 0 means MMRV, 1 means DNRV. 
-If DNRV is selected, the following lines should also be considered.
-*  The second line should be written as 0. 
-*  The third line means the port number used to socket communication between M0 and M1-Mn.
-*  The fourth line means the number of distributed machines.
-*  The fifth line means the number of states in each segment.
-*  From the sixth line,  the IP addresses of distributed machines should be written.
+
+* In the first line, 1 means the distributed network-based runtime verification (DNRV) is utilized, while 0 means the multi-core machine-based runtime verification (MMRV) is utilized. Since this paper presents the DNRV, the number in this line should be 1.
+* The second line should be 0, meaning this is a release version. While 1 means this is a debug version.
+* The third line means the port number used to socket communication between M0 and M1-Mn.
+* The fourth line means the number of distributed machines.
+* The fifth line means the number of states in each segment, which is 500000 in our paper.
+* From the sixth line,  the IP addresses of distributed machines should be written.
