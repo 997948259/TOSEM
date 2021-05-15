@@ -68,6 +68,6 @@ It is not neccssary to build it. Instead, it can be executed directly.
 * The fifth line means the number of states in each segment, which is 500000 in our paper.
 * From the sixth line, the IP addresses of distributed machines should be written.
 
-(4) The monitored MSVL program and the desired property are written in the file "_MSVInput.m".
+(4) The monitored MSVL program and the desired property are written in the file "\_MSVInput.m".
 
 ![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118351974-7a334d80-b591-11eb-99bf-33f0ee0cb9e5.png)
