@@ -59,7 +59,7 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 (3) The configuration information is written in the file /MSV/Info.txt. An example is shown as follows.
 
-![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118351617-90d8a500-b58f-11eb-9b8d-d260ea043c53.png)
+![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118353353-6b9c6480-b598-11eb-96c7-3fbca04052e5.png)
 
 * In the first line, 1 means the distributed network-based runtime verification (DNRV) is utilized, while 0 means the multi-core machine-based runtime verification (MMRV) is utilized. Since this paper presents the DNRV, the number in this line should be 1.
 * The second line should be 0, meaning this is a release version. While 1 means this is a debug version.
@@ -74,7 +74,6 @@ It is not neccssary to build it. Instead, it can be executed directly.
 
 (5) Run the project and the following result can be obtained. 
 
-![Uploading 360截图17100813153429.png…]()
-
+![360截图17100813153429](https://user-images.githubusercontent.com/11765210/118353300-38f26c00-b598-11eb-91c7-bb2826969a3e.png)
 
 The left picture shows the result produced by machine M0, including the final verification result and the verification time, while the right picture shows the result produced by machines M1-Mn, including some socket communiction information and intermediate results.
