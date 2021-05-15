@@ -6,9 +6,11 @@ The input of PPTLCheck+ is the monitored Xd-C program and the desired property s
 
 PPTLCheck+ consists of three modules: a translator used to convert an Xd-C program into an MSVL program, a compiler employed to compile an MSVL program into executable code, and a verifier to complete the verification task, which is contained in the folder "/tools".
 
-# Function of each folder
+# Introduction of each folder
 
-The folder "Examples" contains the conducted experiments in Section 5 in the submitted paper, in the folder:
+## The folder "Examples" 
+
+It contains the conducted experiments in Section 5 in the submitted paper, in the folder:
 
 * The subfolder "Efficiency_Evaluation_Examples" contains C and corresponding MSVL programs utilized to achieve the Efficiency Evaluation in Section 5.1. In total, there are 35 programs.
 * The subfolder "Effectiveness_Evaluation_Examples" contains C and corresponding MSVL programs utilized to achieve the Effectiveness Evaluation in Section 5.2. In total, there are 10 programs.
@@ -16,8 +18,13 @@ The folder "Examples" contains the conducted experiments in Section 5 in the sub
 * The subfolder "Performance_Comparison_Examples" contains 10 MSVL programs utilized to achieve the Performance Comparison in Section 5.4.
 * The subfolder "Examples_Input/input" contains the program inputs for the programs in the folders "Effectiveness_Evaluation_Examples", "Scalability_Evaluation_Examples" and "Performance_Comparison_Examples".
 
-- [Heading One](#heading-one)
-- [Heading Two](#heading-two)
-	- [AAA](#aaa)
-	- [bbb](#bbb)
+## The folder "tools" 
+
+It contains the necessary environment and modules to accomplish our tool PPTLCheck+, in the folder:
+
+* The subfolder "LLVM" contains the necessary files to build the LLVM environment. It should be copied to C:\.
+* The compressed file "C2M.7z" contains the translator to translate Xd-C programs to MSVL programs.
+* The subfolder "distributedMachines" contains the module implemented in each distributed machine (M1-Mn), which is employed to accomplish the verification task for each segment.
+* The compressed file "DNRV-MMRV.7z" contains the module in machine M0 to accomplish the program execution, verification tasks distribution and verification results collection.
+
 
