@@ -29,9 +29,13 @@ It contains the necessary environment and modules to accomplish our tool PPTLChe
 
 # Building and running the project
 
+The project is built and run in the Windows platform. For the compressed files, it is needed to unzip them at first.
+
 ## The tool C2M
 
-(1) For Windows, open command prompt and enter the file folder where C2M.exe is located;
+It is not neccssary to huild it. Instead, it can be executed directly.
+
+(1) Open command prompt and enter the file folder where C2M.exe is located;
 
 (2) Type C2M.exe D:\inputfile.c, where D:\inputfile.c is the file path of the input file inputfile.c;
 
